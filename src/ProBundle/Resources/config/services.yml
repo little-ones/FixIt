@@ -1,0 +1,4 @@
+services:
+#    pro.example:
+#        class: ProBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

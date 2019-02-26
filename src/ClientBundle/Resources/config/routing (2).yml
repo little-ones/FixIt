@@ -1,0 +1,44 @@
+client_service:
+    resource: "@ClientBundle/Resources/config/routing/service.yml"
+    prefix:   /service
+client_demandeadmin:
+    resource: "@ClientBundle/Resources/config/routing/demande.yml"
+    prefix:   /demandeadmin
+client_homepage:
+    path:     /
+    defaults: { _controller: ClientBundle:Default:index }
+client_test:
+    path:     /dd
+    defaults: { _controller: ClientBundle:Default:dd }
+client_profil:
+    path:     /profil
+    defaults: { _controller: ClientBundle:Default:profil }
+client_demandedelete:
+    path:     /demandedelete/{id}
+    defaults: { _controller: ClientBundle:DemandeC:Delete }
+client_demandeshow:
+    path:     /mesdemande
+    defaults: { _controller: ClientBundle:DemandeC:ListDemande }
+client_demandeajout:
+    path:     /ajoutdemande
+    defaults: { _controller: ClientBundle:DemandeC:ajouter }
+client_demandemodif:
+    path:     /modifdemande/{id}
+    defaults: { _controller: ClientBundle:DemandeC:Modifier }
+
+client_offreslist:
+    path:     /offrelist
+    defaults: { _controller: ClientBundle:Default:ListOffre }
+
+client_reservationajout:
+    path:     /ajoutreserv/{id}
+    defaults: { _controller: ClientBundle:Reservation:ajouter }
+client_reservationlist:
+    path:     /reservationlist
+    defaults: { _controller: ClientBundle:Reservation:ListReservation }
+client_reservationmodif:
+    path:     /reservationmodif/{id}
+    defaults: { _controller: ClientBundle:Reservation:modifier }
+client_reservationdelete:
+    path:     /reservationdelete/{id}
+    defaults: { _controller: ClientBundle:Reservation:Delete }

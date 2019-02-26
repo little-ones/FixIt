@@ -1,0 +1,15 @@
+fixit_homepage:
+    path:     /
+    defaults: { _controller: FixitBundle:Default:index }
+fixit_aboutus:
+    path:     /aboutus
+    defaults: { _controller: FixitBundle:Default:aboutus }
+fixit_services:
+    path:     /services
+    defaults: { _controller: FixitBundle:Default:services }
+fixit_gallery:
+    path:     /gallery
+    defaults: { _controller: FixitBundle:Default:gallery }
+fixit_contactus:
+    path:     /contactus
+    defaults: { _controller: FixitBundle:Default:contactus }

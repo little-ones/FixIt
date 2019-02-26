@@ -1,0 +1,48 @@
+{% extends "baseadmin.html.twig" %}
+
+{% block title %}{{ '%entity% creation'|trans({'%entity%': 'Demande'}, 'admin') }} - {{ parent() }}{% endblock %}
+
+{% block content %}
+    <div style="margin: 200px ;margin-top: 10px;">
+
+        <h1 style="text-align: center">{{ '%entity% creation'|trans({'%entity%': 'Demande'}, 'admin') }}</h1>
+
+        {{ form_start(form, {action: path('DemandeClientAdmin_create')},{'attr':{'class ':'form-control'}}) }}
+
+        <div class="form-group">
+            <label>Client</label>
+            {{ form_widget(form.idClient ,{'attr':{'class ':'form-control select2 select2-hidden-accessible'}}) }}
+        </div>
+        <div class="form-group">
+            <label>Titre</label>
+            {{ form_widget(form.titre ,{'attr':{'class ':'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label>Catégorie</label>
+            {{ form_widget(form.categorie ,{'attr':{'class ':'form-control select2 select2-hidden-accessible'}}) }}
+        </div>
+        <div class="form-group">
+            <label>Budget</label>
+            {{ form_widget(form.budget ,{'attr':{'class ':'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            {{ form_widget(form.description ,{'attr':{'class ':'form-control'}}) }}
+        </div>
+        <p>
+            <button class="btn btn-primary" type="submit">{{ 'Create'|trans({}, 'admin') }}</button>
+        </p>
+        {{ form_end(form) }}
+
+
+        <div class="btn-group record_actions">
+
+            <a class="btn btn-info" href="{{ path('DemandeClientAdmin') }}">
+                <i class="fa fa-list"></i> {{ 'Back to the list'|trans({}, 'admin') }}
+            </a>
+
+
+        </div>
+
+    </div>
+{% endblock %}

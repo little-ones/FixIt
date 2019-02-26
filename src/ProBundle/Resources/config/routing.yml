@@ -1,0 +1,9 @@
+pro_homepage:
+    path:     /
+    defaults: { _controller: ProBundle:Default:index }
+pro_offreshow:
+    path:     /mesoffres
+    defaults: { _controller: ProBundle:Offre:ListOffre }
+pro_offreajout:
+    path:     /ajoutOffre
+    defaults: { _controller: ProBundle:Offre:ajoutOffre }

@@ -1,0 +1,190 @@
+{% extends 'baseclient.html.twig' %}
+{% block header %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+    {{ parent() }}
+
+    <body style="">
+
+    <!-- Page Wrap ===========================================-->
+    <div id="wrap">
+
+
+        <!--======= BLOG =========-->
+        <section class="blog">
+            <div class="container">
+                <h4 class="text-uppercase margin-t-20">Mes demandes</h4>
+
+                <ul class="row">
+                    <li class="col-sm-8">
+
+
+                        <!--======= ADMIN INFO =========-->
+                        {% for i in demande %}
+                            <div class="admin-info">
+
+                                <ul class="row" >
+                                    <li class="col-xs-2 no-padding"><img class="img-responsive"
+                                                                         src="{{ asset('images/team-1.jpg') }}"
+                                                                         alt=""></li>
+                                    <li class="col-xs-10">
+                                        <h5 class="text-uppercase no-margin" >{{ i.categorie.categorie }} : {{ i.budget }} DT</h5>
+                                        <br>
+
+                                        <textarea cols="75" rows="3" style="padding:5px ;border-color: #448aff; border-radius: 5px ;resize:none" readonly >{{ i.description }}</textarea>
+
+                                        <a class="btn btn-default btn-sm" href="{{ path('client_demandemodif', {id: i.id}) }}">
+                                            <i class="fa fa-edit"></i> {{ 'edit'|trans({}, 'admin') }}
+                                        </a>
+
+                                        <a class="btn btn-default btn-sm"
+                                           href="{{ path('client_demandedelete', {id: i.id}) }}">
+                                            <i class="fa fa-trash-o"></i> {{ 'delete'|trans({}, 'admin') }}
+                                        </a>
+
+                                        <span style="margin-left: 220px"><i class="fa fa-calendar "></i> {{ i.date | date("m/d/Y") }} </span>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        {% endfor %}
+                    </li>
+                    <!--======= SIDE BAR =========-->
+                    <li class="col-sm-4" >
+                        <div class="blog-side-bar" >
+
+
+                            <!--=======  RECENT POST =========-->
+                            <h5>RECENT POST</h5>
+                            <div  class="tw-widgets">
+                                <ul >
+
+                                    <!--=======  RECENT POST =========-->
+                                    <li >
+                                        <ul class="wid-in">
+                                            <li><a href="#."><img class="img-responsive"
+                                                                  src="{{ asset('images/gal-img-3.jpg') }}"
+                                                                  alt=""></a></li>
+                                            <li>
+                                                <div class="img-side"></div>
+                                                <a href="#.">Beritatis et Quasi Arcteco veatae Vitae</a> <span><i
+                                                            class="fa fa-calendar"></i>Jan 12, 2015 </span></li>
+                                        </ul>
+                                    </li>
+
+                                    <!--=======  RECENT POST =========-->
+                                    <li>
+                                        <ul class="wid-in">
+                                            <li><a href="#."><img class="img-responsive"
+                                                                  src="{{ asset('images/gal-img-2.jpg') }}"
+                                                                  alt=""></a></li>
+                                            <li>
+                                                <div class="img-side"></div>
+                                                <a href="#.">Seritatis et Quasi Arcteco veatae Vitae</a> <span><i
+                                                            class="fa fa-calendar"></i>Jan 12, 2015 </span></li>
+                                        </ul>
+                                    </li>
+
+                                    <!--=======  RECENT POST =========-->
+                                    <li>
+                                        <ul class="wid-in">
+                                            <li><a href="#."><img class="img-responsive"
+                                                                  src="{{ asset('images/gal-img-3.jpg') }}"
+                                                                  alt=""></a></li>
+                                            <li>
+                                                <div class="img-side"></div>
+                                                <a href="#.">Seritatis et Quasi Arcteco veatae Vitae</a> <span><i
+                                                            class="fa fa-calendar"></i>Jan 12, 2015 </span></li>
+                                        </ul>
+                                    </li>
+
+                                    <!--=======  RECENT POST =========-->
+                                    <li>
+                                        <ul class="wid-in">
+                                            <li><a href="#."><img class="img-responsive"
+                                                                  src="{{ asset('images/gal-img-2.jpg') }}"
+                                                                  alt=""></a></li>
+                                            <li>
+                                                <div class="img-side"></div>
+                                                <a href="#.">Seritatis et Quasi Arcteco veatae Vitae</a> <span><i
+                                                            class="fa fa-calendar"></i>Jan 12, 2015 </span></li>
+                                        </ul>
+                                    </li>
+
+                                    <!--=======  RECENT POST =========-->
+                                    <li>
+                                        <ul class="wid-in">
+                                            <li><a href="#."><img class="img-responsive"
+                                                                  src="{{ asset('images/gal-img-4.jpg') }}"
+                                                                  alt=""></a></li>
+                                            <li>
+                                                <div class="img-side"></div>
+                                                <a href="#.">Seritatis et Quasi Arcteco veatae Vitae</a> <span><i
+                                                            class="fa fa-calendar"></i>Jan 12, 2015 </span></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </section>
+
+
+    </div>
+
+
+    <script src="{{ asset('js/jquery-1.11.0.min.js') }}"></script>
+    <script src="{{ asset('js/wow.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.stellar.js') }}"></script>
+    <script src="{{ asset('js/jquery.isotope.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.flexslider-min.js') }}"></script>
+    <script src="{{ asset('js/counter.js') }}"></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.sticky.js') }}"></script>
+    <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('js/own-menu.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+    </script>
+    </body>
+{% endblock %}

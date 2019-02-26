@@ -1,0 +1,86 @@
+{% extends 'baseclient.html.twig' %}
+{% block header %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+    {{ parent() }}
+    <body style="">
+    <!-- Page Wrap ===========================================-->
+    <div id="wrap">
+
+
+
+
+        <!--======= CONTACT =========-->
+        <section class="contact">
+            <div class="container">
+
+                <!--======= CONTACT INFORMATION =========-->
+                <div class="contact-info">
+                    <div class="row">
+
+                        <!--======= CONTACT =========-->
+
+
+                        <!--======= CONTACT FORM =========-->
+
+
+                        <div class="contact-form">
+
+
+                            <div class="tittle"><h2>Request Service or Estimate </h2>
+                                <hr>
+                                <p>Feel free to call us directly or simply complete our form below and we will follow up
+                                    with you.</p>
+                            </div>
+
+
+                            <div id="contact_message" class="success-msg"><i class="fa fa-paper-plane-o"></i>Thank You.
+                                Your Message has been Submitted
+                            </div>
+
+                            {{ form_start(form,{'attr':{'id ':'contact_form'}},{action: path('client_demandeajout')}) }}
+                                <ul class="row">
+                                    <li class="col-sm-6">
+                                        <label>Titre *
+                                            {{ form_widget(form.titre ,{'attr':{'class ':'form-control'}})}}
+                                        </label>
+                                    </li>
+                                    <li class="col-sm-6">
+                                        <label>Catégorie *
+                                            {{ form_widget(form.categorie ,{'attr':{'class ':'form-control'}}) }}
+                                        </label>
+                                    </li>
+                                    <li class="col-sm-6">
+                                        <label>Budget *
+                                            {{ form_widget(form.budget ,{'attr':{'class ':'form-control'}}) }}
+                                        </label>
+                                    </li>
+                                    <li class="col-sm-12">
+                                        <label>Description of work or services needed
+                                            {{ form_widget(form.description ,{'attr':{'class ':'form-control'}}) }}
+                                        </label>
+                                    </li>
+
+                                    <li class="col-sm-12 ">
+                                        {{ form_widget(form.SUBMIT ,{'attr':{'class ':'btn btn-default btn-sm '}}) }}
+
+                                    </li>
+                                </ul>
+                            {{ form_end(form) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+    </div>
+
+
+
+
+    </body>
+{% endblock %}

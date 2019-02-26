@@ -1,0 +1,46 @@
+<button type="button" class="btn btn-default filter" data-toggle="collapse"
+        data-target="#filter">{{ 'Show/hide filters'|trans({}, 'admin') }} <i
+            class="fa fa-angle-{{ app.session.get('filter.demande') ? 'right' : 'down' }}"></i></button>
+<div id="filter" class="collapse {% if app.session.get('filter.demande') %} in{% endif %}">
+
+<div style="padding-right: 500px">
+    <form method="get" action="" id="contact_form">
+        <div class="form-group">
+            <label>Client</label>
+            {{ form_widget(form.idClient ,{'attr':{'class ':'form-control select2 select2-hidden-accessible'}}) }}
+        </div>
+        <div class="form-group">
+            <label>Titre</label>
+            {{ form_widget(form.titre ,{'attr':{'class ':'form-control'}}) }}
+        </div>
+        <div class="form-group">
+            <label>Budget</label>
+            {{ form_widget(form.budget ,{'attr':{'class ':'form-control'}}) }}
+        </div>
+
+        <div class="form-group">
+            <label>Date range:</label>
+
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                </div>
+                {{ form_widget(form.date ,{'attr':{'id ':'reservation'}}) }}
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label>Catégorie</label>
+            {{ form_widget(form.categorie ,{'attr':{'class ':'form-control select2 select2-hidden-accessible'}}) }}
+        </div>
+
+        <p class="btn-group ">
+            <button class="btn btn-primary" type="submit" name="submit-filter"><i
+                        class="fa fa-filter"></i> {{ 'Filter'|trans({}, 'admin') }}</button>
+            <a class="btn btn-default" href="?reset-filter"><i
+                        class="fa fa-times"></i> {{ 'Reset filters'|trans({}, 'admin') }}</a>
+        </p>
+    </form>
+</div>
+
+</div>

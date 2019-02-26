@@ -1,0 +1,35 @@
+DemandeClientAdmin:
+    path:  /
+    defaults: { _controller: "ClientBundle:Demande:index" }
+
+DemandeClientAdmin_sort:
+    path:  /{field}/{type}/sort
+    defaults: { _controller: "ClientBundle:Demande:sort" }
+    requirements: { type: ASC|DESC }
+
+DemandeClientAdmin_show:
+    path:  /{id}/show
+    defaults: { _controller: "ClientBundle:Demande:show" }
+
+DemandeClientAdmin_new:
+    path:  /new
+    defaults: { _controller: "ClientBundle:Demande:new" }
+
+DemandeClientAdmin_create:
+    path:  /create
+    defaults: { _controller: "ClientBundle:Demande:create" }
+    requirements: { _method: post }
+
+DemandeClientAdmin_edit:
+    path:  /{id}/edit
+    defaults: { _controller: "ClientBundle:Demande:edit" }
+
+DemandeClientAdmin_update:
+    path:  /{id}/update
+    defaults: { _controller: "ClientBundle:Demande:update" }
+    requirements: { _method: post|put }
+
+DemandeClientAdmin_delete:
+    path:  /{id}/delete
+    defaults: { _controller: "ClientBundle:Demande:delete" }
+    requirements: { _method: post|delete }
