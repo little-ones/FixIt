@@ -1,0 +1,48 @@
+{% extends 'baseFrontendClient.html.twig' %}
+{% block header %}
+    {{ parent() }}
+{% endblock %}
+{% block steelsheet %}
+    {{ parent() }}
+    <link href="{{ absolute_url(asset('css/styleclient.css') )}}" rel="stylesheet" type="text/css">
+    <link href="{{ absolute_url(asset('css/bootstrapclient.css')) }}" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block content %}
+
+    <section class="profile_area">
+        <div class="container">
+            <div class="profile_inner " style="margin-top: 30px ; margin-bottom: 80px">
+                <a href="{{ path('profilImprimer') }}">
+                <button  class="btn" style="margin-left: 900px ; margin-top: 50px ;
+                    width: 180px ; height: 70px ; background-color: #ffc107;
+                    color: #ffffff; font-size: small">
+                    Imprimer
+                </button>
+                </a>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <img class="img-fluid" src="{{ absolute_url(asset('images/personal.jpg') )}}" alt="">
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="personal_text" style="margin-top: 20px">
+                            <h6>Hello Everybody, i am</h6>
+                            <h3>Donald McKinney</h3>
+                            <h4>Junior UI/UX Developer</h4>
+                            <p>You will begin to realise why this exercise is called the Dickens Pattern (with reference to the ghost showing Scrooge some different futures)</p>
+                            <ul class="list basic_info">
+                                <li><a href="#" ><i  ><i class="fa fa-calendar"></i></i> 31st December, 1992</a></li>
+                                <li><a href="#"><i class="fa fa-phone"></i>44 (012) 6954 783</a></li>
+                                <li><a href="#"><i class="fa fa-envelope"></i> businessplan@donald</a></li>
+                                <li><a href="#"><i class="fa fa-home"></i> Santa monica bullevard</a></li>
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block footer %}
+{% endblock %}

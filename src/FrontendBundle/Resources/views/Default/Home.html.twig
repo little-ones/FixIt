@@ -1,0 +1,211 @@
+{% extends 'baseFrontend.html.twig' %}
+{% block header %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+    {{ parent() }}
+<body style="">
+    <!-- Page Wrap ===========================================-->
+    <div id="wrap">
+
+
+
+        <!--======= HEADER =========-->
+
+        <!--======= BANNER =========-->
+        <div id="banner">
+            <div class="flex-banner">
+                <ul class="slides">
+                    <li class="flex-active-slide" style="width: 100%; float: left; margin-right: -100%; position: relative; display: block; z-index: 2; opacity: 1;"> <img src="{{ asset('images/slide-1.jpg') }}" alt="" draggable="false">
+
+                        <!--======= BANNER INNER =========-->
+                        <div class="banner-up">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-5">
+
+                                        <!--======= BANNER FORM =========-->
+                                        <div class="bnr-form">
+                                            <h3>Quick service request</h3>
+                                            <h6>24 housrs service available!</h6>
+                                            <!--<div id="banner_message" class="success-msg"> <i class="fa fa-paper-plane-o"></i>Thank You. Your Message has been Submitted</div>-->
+                                            <form role="form" id="banner_form" method="post" onsubmit="return false">
+                                                <ul class="row">
+                                                    <li class="col-sm-6">
+                                                        <input type="text" name="name" id="name" placeholder="Name" required="">
+                                                    </li>
+                                                    <li class="col-sm-6">
+                                                        <input type="text" name="phone" id="phone" placeholder="PHONE" required="">
+                                                    </li>
+                                                    <li class="col-sm-12">
+                                                        <input type="text" name="email" id="email" placeholder="email" required="">
+                                                    </li>
+                                                    <li class="col-sm-12">
+                                                        <textarea name="msgform" id="msgform" rows="5" placeholder="Description of work or services needed"></textarea>
+                                                    </li>
+                                                    <li class="col-sm-12">
+                                                        <button type="submit" value="submit" class="btn" id="btn_submit" onclick="bannerProceed();">SUBMIT</button>
+                                                    </li>
+                                                </ul>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <!--======= BANNER IMAGES =========-->
+                                    <div class="col-sm-7">
+                                        <section> <img class="img-responsive pull-right" src="{{ asset('images/slide-img-1.png') }}" alt="" draggable="false"> </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li style="width: 100%; float: left; margin-right: -100%; position: relative; display: block; z-index: 1; opacity: 0;" class=""> <img src="{{ asset('images/slide-2.jpg') }}" alt="" draggable="false">
+
+                        <!--======= BANNER INNER =========-->
+                        <div class="banner-up">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <section> <img class="img-responsive pull-left" src="{{ asset('images/slide-img-2.png') }}" alt="" draggable="false"> </section>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <div class="text-sec">
+                                            <section>
+                                                <h1>just call <span>+61 (123) 456 789</span></h1>
+                                            </section>
+                                            <section>
+                                                <h1>we are always  ready to service</h1>
+                                            </section>
+                                            <a href="#." class="btn btn-1">get quote</a><a href="#." class="btn">about us</a> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ol class="flex-control-nav flex-control-paging"><li><a class="flex-active">1</a></li><li><a class="">2</a></li></ol><ul class="flex-direction-nav"><li><a class="flex-prev" href="#">Previous</a></li><li><a class="flex-next" href="#">Next</a></li></ul></div>
+        </div>
+
+        <li class="col-sm-8 " style="margin-left: 200px">
+        {% for i in demandes %}
+            <div class="admin-info">
+
+                <ul class="row">
+                    <li class="col-xs-2 no-padding"><img class="img-responsive"
+                                                         src="{{ asset('images/team-1.jpg') }}"
+                                                         alt=""></li>
+                    <li class="col-xs-10">
+                        <h5 class="text-uppercase no-margin">
+                            {{ i.categorie.nom }}
+                            : {{ i.budget }} DT
+                        </h5>
+                        <br>
+
+                        <textarea cols="75" rows="3"
+                                  style="padding:5px ;border-color: #448aff; border-radius: 5px ;resize:none"
+                                  readonly>{{ i.description }}</textarea>
+
+                        <a class="btn btn-default btn-sm"
+                           href="{{ path('Contacter' , {id : i.id }) }}">
+                            <i class="fa fa-edit"></i> Contacter !
+                        </a>
+                        <span style="margin-left: 220px"><i
+                                    class="fa fa-calendar "></i> {{ i.date | date("m/d/Y") }} </span>
+                    </li>
+                </ul>
+
+            </div>
+        {% endfor %}
+        </li>
+
+
+        <!--======= CLIENTS FEEDBACK =========-->
+        <section class="clients">
+            <div class="container">
+
+                <!--======= TITTLE =========-->
+                <div class="tittle">
+                    <h2>feedback from clients</h2>
+                </div>
+                <ul class="row">
+
+                    <!--======= CLIENTS WORD =========-->
+                    <li class="col-md-4">
+                        <div class="avatar"> <img src="{{ asset('images/avatar-1.jpg')}}" alt=""> </div>
+                        <div class="clients-in">
+                            <p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae qicknit vitae dicta sunt explicabo. </p>
+                            <h6>Jenny Nair -<span> Home Owner</span></h6>
+                        </div>
+                    </li>
+
+                    <!--======= CLIENTS WORD =========-->
+                    <li class="col-md-4">
+                        <div class="avatar"> <img src="{{ asset('images/avatar-2.jpg')}}" alt=""> </div>
+                        <div class="clients-in">
+                            <p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae qicknit vitae dicta sunt explicabo. </p>
+                            <h6>Jenny Nair -<span> Home Owner</span></h6>
+                        </div>
+                    </li>
+
+                    <!--======= CLIENTS WORD =========-->
+                    <li class="col-md-4">
+                        <div class="avatar"> <img src="{{ asset('images/avatar-3.jpg')}}" alt=""> </div>
+                        <div class="clients-in">
+                            <p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae qicknit vitae dicta sunt explicabo. </p>
+                            <h6>Jenny Nair -<span> Home Owner</span></h6>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+
+        <!--======= FOOTER =========-->
+
+    </div>
+    <script src="{{ asset('js/jquery-1.11.0.min.js')}}"></script>
+    <script src="{{ asset('js/wow.min.js')}}"></script>
+    <script src="{{ asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('js/jquery.stellar.js')}}"></script>
+    <script src="{{ asset('js/jquery.isotope.min.js')}}"></script>
+    <script src="{{ asset('js/jquery.flexslider-min.js')}}"></script>
+    <script src="{{ asset('js/counter.js')}}"></script>
+    <script src="{{ asset('js/owl.carousel.min.js')}}"></script>
+    <script src="{{ asset('js/jquery.sticky.js')}}"></script>
+    <script src="{{ asset('js/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{ asset('js/own-menu.js')}}"></script>
+    <script src="{{ asset('js/main.js')}}"></script>
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+
+    </script>
+    </body>
+{% endblock %}

@@ -1,0 +1,36 @@
+fixit_homepage:
+    path:     /
+    defaults: { _controller: FrontendBundle:Default:Home }
+fixit_aboutus:
+    path:     /aboutus
+    defaults: { _controller: FrontendBundle:Default:aboutus }
+fixit_MesOffres:
+    path:     /MesOffres
+    defaults: { _controller: FrontendBundle:Default:services }
+fixit_gallery:
+    path:     /gallery
+    defaults: { _controller: FrontendBundle:Default:gallery }
+fixit_contactus:
+    path:     /contactus
+    defaults: { _controller: FrontendBundle:Default:contactus }
+fixit_Profil:
+    path:     /profil
+    defaults: { _controller: FrontendBundle:Default:profil }
+profilImprimer:
+    path:     /profilImprimer
+    defaults: { _controller: FrontendBundle:Default:profilImprimer }
+fixit_AddOffre:
+    path:     /AddOffre
+    defaults: { _controller: FrontendBundle:Default:AddOffre }
+fixit_AddService:
+    path:     /AddService
+    defaults: { _controller: FrontendBundle:Default:AddService }
+SuppOffre:
+    path:     /SuppOffre/{id}
+    defaults: { _controller: FrontendBundle:Default:SuppOffre }
+MOdifierOffre:
+    path:     /ModifierOffre/{id}
+    defaults: { _controller: FrontendBundle:Default:ModifierOffre }
+Contacter:
+    path:     /Contacter/{id}
+    defaults: { _controller: FrontendBundle:Default:Contacter }

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HandyMan - Handy Man, Plumber HTML Template</title>
+    <meta name="keywords"
+          content="HTML5,CSS3,HTML,Template,Multi-Purpose,M_Adnan,Corporate Theme,HandyMan - HandyMan &amp; Handy Man Template">
+    <meta name="description" content="HandyMan - Handy Man, Plumber HTML Template">
+    <meta name="author" content="M_Adnan">
+    {% block steelsheet %}
+        <!-- FONTS ONLINE -->
+        <link href='{{ asset('http://fonts.googleapis.com/css?family=Exo+2:700,600,200,800,300,400,500,100,900') }}'
+              rel='stylesheet' type='text/css'>
+        <link href='{{ asset('http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900') }}' rel='stylesheet'
+              type='text/css'>
+
+        <!--MAIN STYLE-->
+        <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/animate.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/responsive.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="{{ asset('https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js') }}"></script>
+        <script src="{{ asset('https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js') }}"></script>
+        <![endif]-->
+    {% endblock %}
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .top-container {
+            background-color: #f1f1f1;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            margin-right: 0px;
+            margin-left: 0px;
+
+        }
+
+        .topright {
+            position: absolute;
+            top: 8px;
+            right: 106px;
+            font-size: 12px;
+
+        }
+
+        .sticky + .content {
+            padding-top: 102px;
+        }
+
+        table {
+            border-collapse:separate;
+            border-spacing:3px;
+        }
+        #btnconnexion {
+            background: rgba(68, 138, 255, 0.71);
+
+            display: inline-block;
+            padding: 5px 10px;
+            font-size: 10px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+
+            border: none;
+            border-radius: 15px;
+
+        }
+        #AjouterOffre {
+            position: absolute;
+            top: 0px;
+            right: 20px;
+            font-size: 15px;
+            font-family: bold , Arial;
+            border: none;
+            background-color: #ffffff;
+            color: #448aff;
+            cursor: pointer;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+
+<body>
+
+{% block header %}
+    <!-- <div class="container">   ======= LOGO ========= -->
+    <div class="container">
+        <br>
+        <div class="logo"><a href="#."><img src="{{ asset('images/logo.png') }}" alt=""></a></div>
+        <br>
+    </div>
+
+    <header id="header">
+        <div class="container">
+            <!--======= NAV =========-->
+            <nav>
+                <a href="{{ path('fixit_AddOffre') }}" class="btn" id="AjouterOffre" >Poster votre Offre de Service !</a>
+                <!--======= MENU START =========-->
+                <ul class="ownmenu">
+                    <li class="showhide" style="display: none;"><span class="title"></span><span
+                                class="icon fa fa-bars"></span></li>
+                    <li class="active" style=""><a href="{{ path('fixit_homepage') }}">Home<span class="indicator"><i
+                                        class="fa fa-angle-right"></i></span></a>
+                    </li>
+                    <li style=""><a href="{{ path('fixit_MesOffres') }}">Mes Offres </a></li>
+                    <li style=""><a href="{{ path('fixit_gallery') }}">gALLERY</a></li>
+                    <li style=""><a href="10-Blog.html">Blog</a></li>
+                    <li style=""><a href="{{ path('fixit_contactus') }}">Contact us</a></li>
+                    <li style=""><a href="{{ path('fixit_aboutus') }}">About Us </a></li>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+{% endblock %}
+
+
+{% block content %}
+
+{% endblock %}
+
+
+{% block footer %}
+    <footer>
+        <div class="container">
+            <ul class="row">
+                <li class="col-sm-3"><img class="{{ asset('img-responsive') }}"
+                                          src="{{ asset('images/footer-img.png') }}" alt=""></li>
+
+                <!--======= HAPPY CLIENTS =========-->
+                <li class="col-sm-3">
+
+                    <!--======= COUNTER =========-->
+                    <div class="counters"><i class="fa fa-heart-o"></i>
+                        <p>HAPPY CLIENTS</p>
+                        <span class="count1"></span></div>
+                    <!--======= LINKS =========-->
+                    <h5>site links</h5>
+                    <hr>
+                    <div class="links">
+                        <ul>
+                            <li><a href="#.">About Us</a></li>
+                            <li><a href="#."> Our Staffs </a></li>
+                            <li><a href="#."> Recent Projects </a></li>
+                            <li><a href="#."> Latest News </a></li>
+                            <li><a href="#."> Pricing Details</a></li>
+                            <li><a href="#."> Contact Us</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!--======= HAPPY CLIENTS =========-->
+                <li class="col-sm-3">
+
+                    <!--======= COUNTER =========-->
+                    <div class="counters"><i class="fa fa-rocket"></i>
+                        <p>year of service</p>
+                        <span class="count2"></span></div>
+                    <!--======= LINKS =========-->
+                    <h5>services</h5>
+                    <hr>
+                    <div class="links">
+                        <ul>
+                            <li><a href="#.">HandyMan Repairs</a></li>
+                            <li><a href="#."> Drain Cleaning</a></li>
+                            <li><a href="#."> Gas Lines</a></li>
+                            <li><a href="#."> Sewer Lines</a></li>
+                            <li><a href="#."> Water Damage Prevention</a></li>
+                            <li><a href="#."> HandyMan Inspection</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!--======= HAPPY CLIENTS =========-->
+                <li class="col-sm-3">
+
+                    <!--======= COUNTER =========-->
+                    <div class="counters"><i class="fa fa-trophy"></i>
+                        <p>awards won</p>
+                        <span class="count3"></span></div>
+                    <!--======= LINKS =========-->
+                    <h5>Contact</h5>
+                    <hr>
+                    <p>Address: 44 New Design Street,
+                        Melbourne 005 </p>
+                    <p>Phone: +61 (123) 456 789</p>
+                    <p>Fax: +91 5464 213</p>
+                    <p>Email: info@example.com</p>
+
+                    <!--======= SOCIAL ICONS =========-->
+
+                    <ul class="social_icons">
+                        <li class="facebook"><a href="#."><i class="fa fa-facebook"></i> </a></li>
+                        <li class="twitter"><a href="#."><i class="fa fa-twitter"></i> </a></li>
+                        <li class="linkedin"><a href="#."><i class="fa fa-linkedin"></i> </a></li>
+                        <li class="tumblr"><a href="#."><i class="fa fa-tumblr"></i> </a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="rights">
+            <p>Copyright © 2019 FIX'it. All Rights Reserved.</p>
+        </div>
+    </footer>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        window.onscroll = function () {
+            myFunction()
+        };
+
+        var header = document.getElementById("header");
+        var sticky = header.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+        }
+    </script>
+{% endblock %}
+
+{% block script %}
+    <script src="{{ asset('js/jquery-1.11.0.min.js') }}"></script>
+    <script src="{{ asset('js/wow.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.stellar.js') }}"></script>
+    <script src="{{ asset('js/jquery.isotope.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.flexslider-min.js') }}"></script>
+    <script src="{{ asset('js/counter.js') }}"></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.sticky.js') }}"></script>
+    <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('js/own-menu.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+{% endblock %}
+
+
+</body>
+</html>
+
