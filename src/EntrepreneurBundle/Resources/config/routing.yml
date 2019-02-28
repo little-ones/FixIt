@@ -1,0 +1,14 @@
+entrepreneur_projets:
+    resource: "@EntrepreneurBundle/Resources/config/routing/projets.yml"
+    prefix:   /projets
+
+entrepreneur_equipes:
+    resource: "@EntrepreneurBundle/Resources/config/routing/equipes.yml"
+    prefix:   /equipes
+
+entrepreneur_homepage:
+    path:     /
+    defaults: { _controller: EntrepreneurBundle:Projets:show }
+entrepreneur_stat:
+    path:     /construction/stat
+    defaults: { _controller: EntrepreneurBundle:Projets:stat }

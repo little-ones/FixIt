@@ -1,0 +1,81 @@
+{% extends 'baseentrepreneur.html.twig' %}
+{% block header %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+    {{ parent() }}
+<body style="">
+<!-- Page Wrap ===========================================-->
+<div id="wrap">
+
+    <!--======= TOP BAR =========-->
+
+
+    <!--======= HEADER =========-->
+
+
+    <!--======= BANNER =========-->
+    <div class="sub-banner">
+        <div class="container">
+            <h1>Gallery</h1>
+            <p class="exo">we have 25 years exerience in plimbing</p>
+        </div>
+        <ol class="breadcrumb">
+            <li><a href="#">home </a></li>
+            <li class="active"> Gallery</li>
+        </ol>
+    </div>
+
+
+    <!--======= PORTFOLIO =========-->
+
+        <div style="margin-left: 100px; margin-right: 100px;margin-top: 40px;margin-bottom: 20px">
+            <h4>Liste des projets</h4>
+            <center>
+                <table class="table" style="margin-top: 20px" >
+                        <thead style="background: #ffc107">
+                            <tr>
+                                <th>Id</th>
+                                <th>Titre</th>
+                                <th>Proprietaire</th>
+                                <th>Etat</th>
+                                <th>Description</th>
+                                <th>Duree</th>
+                                <th>Equipe</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for projet in projets %}
+                            <tr>
+                                <td><a href="{{ path('projets_show', { 'id': projet.id }) }}">{{ projet.id }}</a></td>
+                                <td>{{ projet.titre }}</td>
+                                <td>{{ projet.proprietaire }}</td>
+                                <td>{{ projet.etat }}</td>
+                                <td>{{ projet.description }}</td>
+                                <td>{{ projet.duree }}</td>
+                                <td>{{ projet.equipe }}</td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <a href="{{ path('projets_show', { 'id': projet.id }) }}">show</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('projets_edit', { 'id': projet.id }) }}">edit</a>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+            </center>
+            <ul>
+                <li>
+                    <a href="{{ path('projets_new') }}">Créer un autre projet</a>
+                </li>
+            </ul>
+        </div>
+
+
+{% endblock %}

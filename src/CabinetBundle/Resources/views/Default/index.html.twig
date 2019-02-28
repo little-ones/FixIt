@@ -1,0 +1,358 @@
+{% extends 'basecabinet.html.twig' %}
+{% block header %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+    {{ parent() }}
+
+    <body style="">
+    <!-- Page Wrap ===========================================-->
+    <div id="wrap">
+
+
+
+
+        <!--======= BANNER =========-->
+        <div id="banner">
+            <div class="flex-banner">
+                <ul class="slides">
+                    <li class="flex-active-slide" style="width: 100%; float: left; margin-right: -100%; position: relative; display: block; z-index: 2; opacity: 1;"> <img src="{{ asset('images/slide-1.jpg') }}" alt="" draggable="false">
+
+                        <!--======= BANNER INNER =========-->
+                        <div class="banner-up">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-5">
+
+                                        <!--======= BANNER FORM =========-->
+                                        <div class="bnr-form">
+                                            <h3>Quick service request</h3>
+                                            <h6>24 housrs service available!</h6>
+                                            <!--<div id="banner_message" class="success-msg"> <i class="fa fa-paper-plane-o"></i>Thank You. Your Message has been Submitted</div>-->
+                                            <form role="form" id="banner_form" method="post" onsubmit="return false">
+                                                <ul class="row">
+                                                    <li class="col-sm-6">
+                                                        <input type="text" name="name" id="name" placeholder="Name" required="">
+                                                    </li>
+                                                    <li class="col-sm-6">
+                                                        <input type="text" name="phone" id="phone" placeholder="PHONE" required="">
+                                                    </li>
+                                                    <li class="col-sm-12">
+                                                        <input type="text" name="email" id="email" placeholder="email" required="">
+                                                    </li>
+                                                    <li class="col-sm-12">
+                                                        <textarea name="msgform" id="msgform" rows="5" placeholder="Description of work or services needed"></textarea>
+                                                    </li>
+                                                    <li class="col-sm-12">
+                                                        <button type="submit" value="submit" class="btn" id="btn_submit" onclick="bannerProceed();">SUBMIT</button>
+                                                    </li>
+                                                </ul>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <!--======= BANNER IMAGES =========-->
+                                    <div class="col-sm-7">
+                                        <section> <img class="img-responsive pull-right" src="{{ asset('images/slide-img-1.png') }}" alt="" draggable="false"> </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li style="width: 100%; float: left; margin-right: -100%; position: relative; display: block; z-index: 1; opacity: 0;" class=""> <img src="{{ asset('images/slide-2.jpg') }}" alt="" draggable="false">
+
+                        <!--======= BANNER INNER =========-->
+                        <div class="banner-up">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <section> <img class="img-responsive pull-left" src="{{ asset('images/slide-img-2.png') }}" alt="" draggable="false"> </section>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <div class="text-sec">
+                                            <section>
+                                                <h1>just call <span>+61 (123) 456 789</span></h1>
+                                            </section>
+                                            <section>
+                                                <h1>we are always  ready to service</h1>
+                                            </section>
+                                            <a href="#." class="btn btn-1">get quote</a><a href="#." class="btn">about us</a> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ol class="flex-control-nav flex-control-paging"><li><a class="flex-active">1</a></li><li><a class="">2</a></li></ol><ul class="flex-direction-nav"><li><a class="flex-prev" href="#">Previous</a></li><li><a class="flex-next" href="#">Next</a></li></ul></div>
+        </div>
+
+        <!--======= SERVICES =========-->
+        <section class="services">
+            <div class="container">
+
+                <!--======= SERVICES ROW =========-->
+                <ul class="row">
+
+                    <!--======= SERVICES =========-->
+                    <li class="col-md-6 padding-r-80">
+                        <div class="tittle">
+                            <h2 class="text-left">we fix all
+                                your HandyMan
+                                problems</h2>
+                        </div>
+                        <p>Sedquis viverra enim. Vivamus aliquet rutrusm dui a varius. Mauris ornoare tortor in eleifends blanditullam ut legula et neque Praesent egset bibendum purus quis.</p>
+
+                    </li>
+
+                    <!--======= SERVICES =========-->
+                    <li class="col-md-4">
+                        <div class="sec-in"> <i class="fa fa-clock-o"></i>
+                            <h6>24/7 Availability</h6>
+                            <p>Vivamus aliquet rutrusm dui a varius
+                                Mauris ornoare tortor. </p>
+
+                        </div>
+                    </li>
+
+                    <!--======= SERVICES =========-->
+                    <li class="col-md-4">
+                        <div class="sec-in"> <i class="fa fa-user"></i>
+                            <h6>genius workers</h6>
+                            <p>Vivamus aliquet rutrusm dui a varius
+                                Mauris ornoare tortor. </p>
+                        </div>
+                    </li>
+
+                    <!--======= SERVICES =========-->
+                    <li class="col-md-4">
+                        <div class="sec-in"> <i class="fa fa-usd"></i>
+                            <h6>low pricing</h6>
+                            <p>Vivamus aliquet rutrusm dui a varius
+                                Mauris ornoare tortor. </p>
+                        </div>
+                    </li>
+
+                    <!--======= SERVICES =========-->
+                    <li class="col-md-4">
+                        <div class="sec-in"> <i class="fa fa-thumbs-o-up"></i>
+                            <h6>free estimation</h6>
+                            <p>Vivamus aliquet rutrusm dui a varius
+                                Mauris ornoare tortor. </p>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!--======= WELCOME =========-->
+        <section class="welcome">
+            <div class="container">
+                <div class="tittle">
+                    <h2>welcome to our HandyMan</h2>
+                    <p>Sedquis viverra enim. Vivamus aliquet rutrusm dui a varius. Mauris ornoare tortor in eleifends blanditullam</p>
+                </div>
+            </div>
+            <img class="img-responsive" src="{{ asset('images/welcome-img.jpg')}}" alt="">
+        </section>
+
+        <!--======= GALLERY =========-->
+        <section class="service-part">
+
+            <div class="container">
+                <div class="tittle">
+                    <h2>our works gallery</h2>
+                </div>
+                <ul class="row">
+                    <li class="col-md-4">
+                        <section> <img class="img-responsive" src="{{ asset('images/ser-img-1.jpg') }}" alt="">
+                            <div class="ser-details"> <a href="#.">emergecy service</a> </div>
+                        </section>
+                    </li>
+                    <li class="col-md-4">
+                        <section> <img class="img-responsive" src="{{ asset('images/ser-img-2.jpg') }}" alt="">
+                            <div class="ser-details"> <a href="#.">residential service</a> </div>
+                        </section>
+                    </li>
+                    <li class="col-md-4">
+                        <section> <img class="img-responsive" src="{{ asset('images/ser-img-3.jpg')}}" alt="">
+                            <div class="ser-details"> <a href="#.">commercial service</a> </div>
+                        </section>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!--======= POPUP PROJECTS =========-->
+        <div id="pop-project" class="zoom-anim-dialog mfp-hide pop-project">
+            <div class="pop_up">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <div id="carousel-img" class="carousel slide" data-ride="carousel">
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active"> <img src="{{ asset('images/pop-img-1.jpg')}}" alt=""> </div>
+                                <div class="item"> <img src="{{ asset('images/pop-img-1.jpg')}}" alt=""> </div>
+                                <div class="item"> <img src="{{ asset('images/pop-img-1.jpg')}}" alt=""> </div>
+                                <div class="item"> <img src="{{ asset('images/pop-img-1.jpg')}}" alt=""> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-img" data-slide-to="0" class="active"><img class="img-responsive" src="{{ asset('images/detail-img-1.jpg')}}" alt=""></li>
+                            <li data-target="#carousel-img" data-slide-to="1"> <img class="img-responsive" src="{{ asset('images/detail-img-2.jpg')}}" alt=""></li>
+                            <li data-target="#carousel-img" data-slide-to="2"><img class="img-responsive" src="{{ asset('images/detail-img-3.jpg')}}" alt=""></li>
+                            <li data-target="#carousel-img" data-slide-to="2"><img class="img-responsive" src="{{ asset('images/detail-img-2.jpg')}}" alt=""></li>
+                        </ol>
+                    </div>
+
+                    <!--======= POPUP PROJECTS DETAILS =========-->
+                    <div class="projects-details">
+                        <div class="col-sm-8">
+                            <h3>sewer line Replacement</h3>
+                            <p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enimsa ipsam voluptatem quia voluptas sit asper niaturu odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptaitem sequi tha nesciunt. Neque porro quisquam est, </p>
+                        </div>
+                        <div class="col-sm-4">
+                            <ul>
+                                <li>
+                                    <p><span>date :</span> Mar 18, 2015</p>
+                                </li>
+                                <li>
+                                    <p><span>Client : </span>ven diesel home</p>
+                                </li>
+                                <li>
+                                    <p><span>work: </span> gas &amp; Sewer Line Replacement</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--======= CLIENTS FEEDBACK =========-->
+        <section class="clients">
+            <div class="container">
+
+                <!--======= TITTLE =========-->
+                <div class="tittle">
+                    <h2>feedback from clients</h2>
+                </div>
+                <ul class="row">
+
+                    <!--======= CLIENTS WORD =========-->
+                    <li class="col-md-4">
+                        <div class="avatar"> <img src="{{ asset('images/avatar-1.jpg')}}" alt=""> </div>
+                        <div class="clients-in">
+                            <p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae qicknit vitae dicta sunt explicabo. </p>
+                            <h6>Jenny Nair -<span> Home Owner</span></h6>
+                        </div>
+                    </li>
+
+                    <!--======= CLIENTS WORD =========-->
+                    <li class="col-md-4">
+                        <div class="avatar"> <img src="{{ asset('images/avatar-2.jpg')}}" alt=""> </div>
+                        <div class="clients-in">
+                            <p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae qicknit vitae dicta sunt explicabo. </p>
+                            <h6>Jenny Nair -<span> Home Owner</span></h6>
+                        </div>
+                    </li>
+
+                    <!--======= CLIENTS WORD =========-->
+                    <li class="col-md-4">
+                        <div class="avatar"> <img src="{{ asset('images/avatar-3.jpg')}}" alt=""> </div>
+                        <div class="clients-in">
+                            <p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae qicknit vitae dicta sunt explicabo. </p>
+                            <h6>Jenny Nair -<span> Home Owner</span></h6>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!--======= CLIENTS FEEDBACK =========-->
+        <section class="blog">
+            <div class="container">
+
+                <!--======= TITTLE =========-->
+                <div class="tittle">
+                    <h2>news from blog</h2>
+                </div>
+                <ul class="row">
+
+                    <!--======= BLOG 1 =========-->
+                    <li class="col-sm-4">
+                        <div class="b-inner"> <img class="img-responsive" src="{{ asset('images/b-img-1.jpg  ')}}" alt="">
+                            <div class="b-details"> <span><i class="fa fa-clock-o"></i> mar 23 ,2015</span> <a href="#.">we provide 24 hours service</a> </div>
+                        </div>
+                    </li>
+
+                    <!--======= BLOG 2 =========-->
+                    <li class="col-sm-4">
+                        <div class="b-inner"> <img class="img-responsive" src="{{ asset('images/b-img-2.jpg')}}" alt="">
+                            <div class="b-details"> <span><i class="fa fa-clock-o"></i> mar 23 ,2015</span> <a href="#.">we provide 24 hours service</a> </div>
+                        </div>
+                    </li>
+
+                    <!--======= BLOG 3 =========-->
+                    <li class="col-sm-4">
+                        <div class="b-inner"> <img class="img-responsive" src="{{ asset('images/b-img-3.jpg'  )}}" alt="">
+                            <div class="b-details"> <span><i class="fa fa-clock-o"></i> mar 23 ,2015</span> <a href="#.">we provide 24 hours service</a> </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!--======= CLIENTS FEEDBACK =========-->
+
+
+        <!--======= FOOTER =========-->
+
+    </div>
+    <script src="{{ asset('js/jquery-1.11.0.min.js')}}"></script>
+    <script src="{{ asset('js/wow.min.js')}}"></script>
+    <script src="{{ asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('js/jquery.stellar.js')}}"></script>
+    <script src="{{ asset('js/jquery.isotope.min.js')}}"></script>
+    <script src="{{ asset('js/jquery.flexslider-min.js')}}"></script>
+    <script src="{{ asset('js/counter.js')}}"></script>
+    <script src="{{ asset('js/owl.carousel.min.js')}}"></script>
+    <script src="{{ asset('js/jquery.sticky.js')}}"></script>
+    <script src="{{ asset('js/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{ asset('js/own-menu.js')}}"></script>
+    <script src="{{ asset('js/main.js')}}"></script>
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+
+    </script>
+    </body>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'basepro.html.twig' %}
+{% block header %}
+    {{ parent() }}
+{% endblock %}
+{% block steelsheet %}
+    {{ parent() }}
+    <link href="{{ asset('css/styleclient.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/bootstrapclient.css') }}" rel="stylesheet" type="text/css">
+{% endblock %}
+{% block content %}
+{{ parent() }}
+<style>
+    .upload-btn-wrapper {
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+    }
+
+    .btnf {
+        border: 2px solid gray;
+        color: gray;
+        background-color: #ffffff;
+        padding: 8px 20px;
+        border-radius: 8px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .upload-btn-wrapper input[type=file] {
+        font-size: 100px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+    }
+</style>
+    <section class="profile_area">
+        <div class="container">
+            <div class="profile_inner p_120">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <img class="img-fluid" width="800px" height="1400px"  src="{{ asset('user/img/'~profil.ImageName) }}" alt="">
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="personal_text ">
+                            <h3>Bienvenue</h3>
+                            <h4>{{ profil.nom }}{{ profil.prenom }}</h4>
+                            <h4>{{ role  }}</h4>
+                            <p>You will begin to realise why this exercise is called the Dickens Pattern (with reference to the ghost showing Scrooge some different futures)</p>
+                            <ul class="list basic_info ">
+                                <li><a href="#" ><i class="fa fa-calendar"></i>{{ profil.lastLogin|date }} </a></li>
+                                <li><a href="#"><i class="fa fa-phone"></i>{{ profil.telephone }}</a></li>
+                                <li><a href="#"><i class="fa fa-envelope"></i> {{ profil.email }}</a></li>
+                                <li><a href="#"><i class="fa fa-home"></i> {{ profil.adresse }}</a></li>
+                            </ul>
+                            <br>
+                            {{ form_start(form,{'attr':{'id ':'contact_form'}}) }}
+
+                                    {{ form_widget(form.imageFile,{'attr':{'class ':'btnf btn-default btn-sm '}}) }}
+                                <br>
+                                {{  form_widget(form.save ,{'attr':{'class ':'btnf btn-default btn-sm '}}) }}
+                            {{ form_end(form) }}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

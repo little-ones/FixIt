@@ -1,3 +1,74 @@
+pro_serviceadmin:
+    resource: "@ClientBundle/Resources/config/routing/service.yml"
+    prefix:   /serviceadmin
+client_demandeadmin:
+    resource: "@ClientBundle/Resources/config/routing/demande.yml"
+    prefix:   /demandeadmin
+client_reservationadmin:
+    resource: "@ClientBundle/Resources/config/routing/reservation.yml"
+    prefix:   /reservationadmin
+#--------------------Demande----------------------------
 client_homepage:
     path:     /
     defaults: { _controller: ClientBundle:Default:index }
+client_profil:
+    path:     /profil
+    defaults: { _controller: ClientBundle:Default:profil }
+client_demandedelete:
+    path:     /demandedelete/{id}
+    defaults: { _controller: ClientBundle:DemandeC:Delete }
+client_demandeshow:
+    path:     /mesdemande
+    defaults: { _controller: ClientBundle:DemandeC:ListDemande }
+client_demandeajout:
+    path:     /ajoutdemande
+    defaults: { _controller: ClientBundle:DemandeC:ajouter }
+client_demandemodif:
+    path:     /modifdemande/{id}
+    defaults: { _controller: ClientBundle:DemandeC:Modifier }
+#---------------------------offre---------------------------------
+client_offreslist:
+    path:     /offrelist
+    defaults: { _controller: ClientBundle:Default:ListOffre }
+client_offresprop:
+    path:     /offreprop
+    defaults: { _controller: ClientBundle:Default:offrerecu }
+#-----------------------Reservation--------------------------------
+client_reservationajout:
+    path:     /ajoutreserv/{id}
+    defaults: { _controller: ClientBundle:ReservationC:ajouter }
+client_reservationlist:
+    path:     /reservationlist
+    defaults: { _controller: ClientBundle:ReservationC:ListReservation }
+client_reservationmodif:
+    path:     /reservationmodif/{id}
+    defaults: { _controller: ClientBundle:ReservationC:modifier }
+client_reservationdelete:
+    path:     /reservationdelete/{id}
+    defaults: { _controller: ClientBundle:ReservationC:Delete }
+#--------------------Profilconsult-----------------------------------
+client_profilconsult:
+    path:     /profilconsult/{id}
+    defaults: { _controller: ClientBundle:Default:profilUSER }
+#----------------------Réclamation---------------------------
+client_reclamation:
+    path:     /reclamationclient
+    defaults: { _controller: ClientBundle:Default:contactus }
+#---------------------pdf bundle externe ----------------------
+client_profiltoPdf:
+    path:     /profiltoPdf/{id}
+    defaults: { _controller: ClientBundle:Default:profilImprimer }
+#--------------------Evenement----------------------------------
+client_EvenementList:
+    path:     /eventList
+    defaults: { _controller: ClientBundle:Default:ListEvenement }
+client_EvenementConsult:
+    path:     /{id}/eventConsult
+    defaults: { _controller: ClientBundle:Default:EvenementConsult }
+client_FormationConsult:
+    path:     /{id}/FormationConsult
+    defaults: { _controller: ClientBundle:Default:FormationConsult }
+#-----------------participation evenement------------------------
+participation_participate:
+    path:     /{id}/participer
+    defaults: { _controller: ClientBundle:Default:Participer }

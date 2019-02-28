@@ -14,6 +14,9 @@ class ServiceControllerTest extends WebTestCase
         $crawler = $client->click($crawler->filter('.new_entry a')->link());
         $form = $crawler->filter('form button[type="submit"]')->form(array(
             'service[categorie]' => 'Lorem ipsum dolor sit amet',
+            'service[date]' => new \DateTime(),
+            'service[imageName]' => 'Lorem ipsum dolor sit amet',
+            'service[description]' => 'Lorem ipsum dolor sit amet',
                     ));
         $client->submit($form);
         $crawler = $client->followRedirect();
@@ -43,6 +46,9 @@ class ServiceControllerTest extends WebTestCase
         $crawler = $client->click($crawler->filter('table.records_list tbody tr td .btn-group a')->eq(1)->link());
         $form = $crawler->filter('form button[type="submit"]')->form(array(
             'service[categorie]' => 'Changed',
+            'service[date]' => new \DateTime(),
+            'service[imageName]' => 'Changed',
+            'service[description]' => 'Changed',
             // ... adapt fields value here ...
         ));
         $client->submit($form);
@@ -92,6 +98,9 @@ class ServiceControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/service/');
         $form = $crawler->filter('div#filter form button[type="submit"]')->form(array(
             'service_filter[categorie]' => 'First%',
+            'service_filter[date]' => new \DateTime(),
+            'service_filter[imageName]' => 'First%',
+            'service_filter[description]' => 'First%',
             // ... maybe use just one field here ...
         ));
         $client->submit($form);

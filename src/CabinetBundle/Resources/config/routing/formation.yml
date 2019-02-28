@@ -1,0 +1,24 @@
+formation_index:
+    path:     /
+    defaults: { _controller: "CabinetBundle:Formation:index" }
+    methods:  GET
+
+formation_show:
+    path:     /{id}/show
+    defaults: { _controller: "CabinetBundle:Formation:show" }
+    methods:  GET
+
+formation_new:
+    path:     /new
+    defaults: { _controller: "CabinetBundle:Formation:new" }
+    methods:  [GET, POST]
+
+formation_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CabinetBundle:Formation:edit" }
+    methods:  [GET, POST]
+
+formation_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CabinetBundle:Formation:delete" }
+    methods:  DELETE

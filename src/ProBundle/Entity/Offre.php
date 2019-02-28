@@ -21,21 +21,24 @@ class Offre
      */
     private $id;
     /**
-     *@ORM\ManyToOne(targetEntity="ClientBundle\Entity\Service")
-     *@ORM\JoinColumn(name="categorie_id",referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="ClientBundle\Entity\Service")
+     * @ORM\JoinColumn (name="service_id", referencedColumnName="id")
      */
     private $service;
     /**
-     *@ORM\Column(type="date")
+     *@ORM\Column(type="date" , length=255)
      */
-    private $date;
-
+    private $dateAjout;
     /**
-     *@ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
-     *@ORM\JoinColumn(name="user_id",referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\JoinColumn (name="user_id", referencedColumnName="id")
      */
-    private $idPro;
-
+    private $User;
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\JoinColumn (name="Client_id", referencedColumnName="id")
+     */
+    private $Client;
     /**
      * @var int
      *
@@ -51,6 +54,41 @@ class Offre
      *@ORM\Column(type="string" , length=255)
      */
     private $Description;
+    /**
+     * @return mixed
+     */
+    public function getDateAjout()
+    {
+        return $this->dateAjout;
+    }
+
+    /**
+     * @param mixed $dateAjout
+     */
+    public function setDateAjout($dateAjout)
+    {
+        $this->dateAjout = $dateAjout;
+    }
+
+
+
+    /**
+     * @return mixed
+     */
+    public function getClient()
+    {
+        return $this->Client;
+    }
+
+    /**
+     * @param mixed $Client
+     */
+    public function setClient($Client)
+    {
+        $this->Client = $Client;
+    }
+
+
 
     /**
      * @return mixed
@@ -71,36 +109,18 @@ class Offre
     /**
      * @return mixed
      */
-    public function getDate()
+    public function getUser()
     {
-        return $this->date;
+        return $this->User;
     }
 
     /**
-     * @param mixed $date
+     * @param mixed $User
      */
-    public function setDate($date)
+    public function setUser($User)
     {
-        $this->date = $date;
+        $this->User = $User;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getIdPro()
-    {
-        return $this->idPro;
-    }
-
-    /**
-     * @param mixed $idPro
-     */
-    public function setIdPro($idPro)
-    {
-        $this->idPro = $idPro;
-    }
-
-
 
     /**
      * @return int
@@ -149,8 +169,6 @@ class Offre
     {
         $this->Description = $Description;
     }
-
-
 
     /**
      * Get id

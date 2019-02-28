@@ -77,4 +77,5 @@ class DemandeCController extends Controller
 
         return $this->render('@Client/Default/listoffre.html.twig',array('offres'=>$qb));
     }
+
 }

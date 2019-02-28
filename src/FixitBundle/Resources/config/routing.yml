@@ -1,3 +1,7 @@
+fixit_reclamation:
+    resource: "@FixitBundle/Resources/config/routing/reclamation.yml"
+    prefix:   /reclamation
+
 fixit_homepage:
     path:     /
     defaults: { _controller: FixitBundle:Default:index }

@@ -1,0 +1,12 @@
+cabinet_formation:
+    resource: "@CabinetBundle/Resources/config/routing/formation.yml"
+    prefix:   /formation
+cabinet_evenement:
+    resource: "@CabinetBundle/Resources/config/routing/evenement.yml"
+    prefix:   /evenement
+cabinet_participation:
+    resource: "@CabinetBundle/Resources/config/routing/participation.yml"
+    prefix:   /participation
+cabinet_homepage:
+    path:     /
+    defaults: { _controller: CabinetBundle:Default:index }

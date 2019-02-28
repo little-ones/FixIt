@@ -2,12 +2,12 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
-    - { resource: "@AdminUserBundle/Resources/config/services.yml" }
-    - { resource: "@ServiceBundle/Resources/config/services.yml" }
-    - { resource: "@OffreBundle/Resources/config/services.yml" }
-    - { resource: "@FrontendBundle/Resources/config/services.yml" }
-    - { resource: "@BackendBundle/Resources/config/services.yml" }
+    - { resource: "@FixitBundle/Resources/config/services.yml" }
     - { resource: "@ClientBundle/Resources/config/services.yml" }
+    - { resource: "@ProBundle/Resources/config/services.yml" }
+    - { resource: "@AdminBundle/Resources/config/services.yml" }
+    - { resource: "@CabinetBundle/Resources/config/services.yml" }
+    - { resource: "@EntrepreneurBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -75,14 +75,18 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+# FOS Configuration
 fos_user:
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'
     firewall_name: main
-    user_class: AdminUserBundle\Entity\User
+    user_class: AppBundle\Entity\User
+    registration:
+        form:
+            type: AppBundle\Form\RegistrationType
     from_email:
-        address: "nidhal@ammar.tn"
-        sender_name: "nidhal"
-
+        address: "mohamedamine.m'henni@esprit.tn "
+        sender_name: "Med amine"
+# KNP Configuration
 knp_paginator:
     page_range: 5                       # number of links showed in the pagination menu (e.g: you have 10 pages, a page_range of 3, on the 5th page you'll see links to page 4, 5, 6)
     default_options:
@@ -93,21 +97,34 @@ knp_paginator:
         filter_field_name: filterField  # filter field query parameter name
         filter_value_name: filterValue  # filter value query parameter name
     template:
-        pagination: '@KnpPaginator/Pagination/sliding.html.twig'     # sliding pagination controls template
+        pagination: '@KnpPaginator/Pagination/twitter_bootstrap_v3_pagination.html.twig'     # sliding pagination controls template
         sortable: '@KnpPaginator/Pagination/sortable_link.html.twig' # sort link template
         filtration: '@KnpPaginator/Pagination/filtration.html.twig'  # filters template
-
+# Lexik Configuration
 lexik_form_filter:
-    force_case_insensitivity: false
-    encoding: ~ # Encoding for case insensitive LIKE comparisons. For example: UTF-8
+    listeners:
+        doctrine_orm: true
+        doctrine_dbal: false
+        doctrine_mongodb: false
+# config/packages/vich_uploader.yaml or app/config/config.yml
+vich_uploader:
+    db_driver: orm
+    mappings:
+        product_image:
+            uri_prefix: /images/user
+            upload_destination: '%kernel.project_dir%/web/user/img'
+
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true
 knp_snappy:
     pdf:
         enabled:    true
-        binary:     "\"C:\\Users\\Engines\\Pictures\\wkhtmltopdf\\bin\\wkhtmltopdf.exe\""
+        binary:     "\"C:\\Users\\Public\\wkhtmltopdf\\bin\\wkhtmltopdf.exe\""
         options:
             encoding: UTF-8
             page-size: A3
     image:
         enabled:    true
-        binary:     "\"C:\\Users\\Engines\\Pictures\\wkhtmltopdf\\bin\\wkhtmltoimage.exe\""
+        binary:     "\"C:\\Users\\Public\\wkhtmltopdf\\bin\\wkhtmltoimage.exe\""
         options:    []

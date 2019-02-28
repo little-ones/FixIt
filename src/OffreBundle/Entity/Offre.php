@@ -29,7 +29,31 @@ class Offre
      *@ORM\Column(type="date" , length=255)
      */
     private $dateAjout;
+    /**
+     * @ORM\ManyToOne(targetEntity="AdminUserBundle\Entity\User")
+     * @ORM\JoinColumn (name="user_id", referencedColumnName="id")
+     */
+    private $User;
+    /**
+     * @ORM\ManyToOne(targetEntity="AdminUserBundle\Entity\User")
+     * @ORM\JoinColumn (name="Client_id", referencedColumnName="id")
+     */
+    private $Client;
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="budget", type="integer")
+     */
+    private $budget;
 
+    /**
+     *@ORM\Column(type="string" , length=255)
+     */
+    private $Titre;
+    /**
+     *@ORM\Column(type="string" , length=255)
+     */
+    private $Description;
     /**
      * @return mixed
      */
@@ -46,16 +70,7 @@ class Offre
         $this->dateAjout = $dateAjout;
     }
 
-    /**
-     * @ORM\ManyToOne(targetEntity="AdminUserBundle\Entity\User")
-     * @ORM\JoinColumn (name="user_id", referencedColumnName="id")
-     */
-    private $User;
-    /**
-     * @ORM\ManyToOne(targetEntity="AdminUserBundle\Entity\User")
-     * @ORM\JoinColumn (name="Client_id", referencedColumnName="id")
-     */
-    private $Client;
+
 
     /**
      * @return mixed
@@ -73,21 +88,7 @@ class Offre
         $this->Client = $Client;
     }
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="budget", type="integer")
-     */
-    private $budget;
 
-    /**
-     *@ORM\Column(type="string" , length=255)
-     */
-    private $Titre;
-    /**
-     *@ORM\Column(type="string" , length=255)
-     */
-    private $Description;
 
     /**
      * @return mixed

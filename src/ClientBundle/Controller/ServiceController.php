@@ -24,19 +24,16 @@ class ServiceController extends Controller
     public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        $form = $this->createForm(ServiceFilterType::class);
+        $form = $this->createForm( ServiceFilterType::class);
         if (!is_null($response = $this->saveFilter($request,$form, 'service', 'service'))) {
             return $response;
         }
-
         $qb = $em->getRepository('ClientBundle:Service')->createQueryBuilder('s');
         $paginator = $this->filter($request,$form, $qb, 'service');
-
-
-
-        // parameters to template
-        return $this->render('ClientBundle:Service:index.html.twig', array('paginator' => $paginator, 'form' => $form->createView()));
-
+                return $this->render('ClientBundle:Service:index.html.twig', array(
+            'form'      => $form->createView(),
+            'paginator' => $paginator,
+        ));
     }
 
     /**
@@ -59,7 +56,7 @@ class ServiceController extends Controller
     public function newAction()
     {
         $service = new Service();
-        $form = $this->createForm(ServiceType::class, $service);
+        $form = $this->createForm( ServiceType::class, $service);
 
         return $this->render('ClientBundle:Service:new.html.twig', array(
             'service' => $service,
@@ -74,7 +71,7 @@ class ServiceController extends Controller
     public function createAction(Request $request)
     {
         $service = new Service();
-        $form = $this->createForm(new ServiceType(), $service);
+        $form = $this->createForm( ServiceType::class, $service);
         if ($form->handleRequest($request)->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($service);
@@ -114,7 +111,7 @@ class ServiceController extends Controller
      */
     public function updateAction(Service $service, Request $request)
     {
-        $editForm = $this->createForm(ServiceType::class, $service, array(
+        $editForm = $this->createForm( ServiceType::class, $service, array(
             'action' => $this->generateUrl('service_update', array('id' => $service->getId())),
             'method' => 'PUT',
         ));
@@ -262,7 +259,7 @@ class ServiceController extends Controller
             ->setAction($this->generateUrl($route, array('id' => $id)))
             ->setMethod('DELETE')
             ->getForm()
-            ;
+        ;
     }
 
 }

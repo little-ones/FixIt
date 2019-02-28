@@ -1,0 +1,95 @@
+{% extends 'basepro.html.twig' %}
+{% block header %}
+    {{ parent() }}
+
+{% endblock %}
+{% block content %}
+    {{ parent() }}
+    <body style="">
+    <!-- Page Wrap ===========================================-->
+    <div id="wrap">
+        <!--======= CONTACT =========-->
+        <section class="contact">
+            <div class="container">
+
+                <!--======= CONTACT INFORMATION =========-->
+                <div class="contact-info">
+                    <div class="row">
+                        <!--======= CONTACT FORM =========-->
+                        <div class="contact-form">
+
+
+                            <div class="tittle"><h2>Add a new Service Offre </h2>
+                                <hr>
+                                <p>Feel free to Post a new offre with the customization you want !</p>
+                            </div>
+                            {{ form_start(form,{'attr':{'id ':'contact_form'}},{action: path('fixit_AddOffre')}) }}
+                            <ul class="row">
+                                    <li class="col-sm-6">
+                                        <label>Give a title for your Offre *
+                                            {{ form_widget(form.Titre, {'attr': {'class': 'form-control'} }) }}
+                                        </label>
+                                    </li>
+                                    <li class="col-sm-6">
+                                        <label>The budget you want *
+                                            {{ form_widget(form.budget, {'attr': {'class': 'form-control'} }) }}
+                                        </label>
+                                    </li>
+                                    <li class="col-sm-6">
+                                        <label>Offre Categorie *
+                                            {{ form_widget(form.service, {'attr': {'class': 'form-control'} })}}
+                                        </label>
+                                    </li>
+
+                                    <li class="col-sm-12 ">
+                                        <label>Describe your Offre here !
+
+                                            {{ form_widget(form.Description, {'attr': {'class': 'form-control'} }) }}
+                                        </label>
+                                    </li>
+                                    <li class="col-sm-12">
+                                        {{ form_widget(form.Ajouter, {'attr': {'class': ' btn-default btn-sm btn'} }) }}
+                                    </li>
+                            </ul>
+                           {{ form_end(form) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+
+
+    <!-- begin map script-->
+    <script type="text/javascript">
+        // Use below link if you want to get latitude & longitude
+        // http://www.findlatitudeandlongitude.com/find-address-from-latitude-and-longitude.php
+        $(document).ready(function () {
+//set up markers
+            var myMarkers = {
+                "markers": [{
+
+                    "latitude": "-37.8176419",
+                    "longitude": "144.9554397",
+
+                    "icon": "{{ asset('images/map-locator.png') }}",
+                    "baloon_text": '121 King St, Melbourne VIC 3000, Australia'
+                }]
+            };
+
+//set up map options
+            $("#map").mapmarker({
+                zoom: 15,
+                center: '121 King Street Melbourne Victoria 3000 Australia',
+                markers: myMarkers
+            });
+        });
+    </script>
+
+    <div style="position: absolute; left: 0px; top: -2px; height: 1px; overflow: hidden; visibility: hidden; width: 1px;">
+        <span style="position: absolute; font-size: 300px; width: auto; height: auto; margin: 0px; padding: 0px; font-family: Roboto, Arial, sans-serif;">BESbswy</span>
+    </div>
+    </body>
+{% endblock %}

@@ -25,33 +25,32 @@
                             </div>
                             {{ form_start(form,{'attr':{'id ':'contact_form'}},{action: path('pro_offreajout')}) }}
                             <ul class="row">
-                                    <li class="col-sm-6">
-                                        <label>Give a title for your Offre *
-                                            {{ form_widget(form.Titre, {'attr': {'class': 'form-control'} }) }}
-                                        </label>
-                                    </li>
-                                    <li class="col-sm-6">
-                                        <label>The budget you want *
-                                            {{ form_widget(form.budget, {'attr': {'class': 'form-control'} }) }}
-                                        </label>
-                                    </li>
-                                    <li class="col-sm-6">
-                                        <label>Offre Categorie *
-                                            {{ form_widget(form.service, {'attr': {'class': 'form-control'} })}}
-                                        </label>
-                                    </li>
+                                <li class="col-sm-6">
+                                    <label>Give a title for your Offre *
+                                        {{ form_widget(form.Titre, {'attr': {'class': 'form-control'} }) }}
+                                    </label>
+                                </li>
+                                <li class="col-sm-6">
+                                    <label>The budget you want *
+                                        {{ form_widget(form.budget, {'attr': {'class': 'form-control'} }) }}
+                                    </label>
+                                </li>
+                                <li class="col-sm-6">
+                                    <label>Offre Categorie *
+                                        {{ form_widget(form.service, {'attr': {'class': 'form-control'} })}}
+                                    </label>
+                                </li>
 
-                                    <li class="col-sm-12 ">
-                                        <label>Describe your Offre here !
+                                <li class="col-sm-12 ">
+                                    <label>Describe your Offre here !
 
-                                            {{ form_widget(form.Description, {'attr': {'class': 'form-control'} }) }}
-                                        </label>
-                                    </li>
-                                    <li class="col-sm-12">
-                                        {{ form_widget(form.Ajouter, {'attr': {'class': ' btn-default btn-sm btn'} }) }}
-                                    </li>
+                                        {{ form_widget(form.Description, {'attr': {'class': 'form-control'} }) }}
+                                    </label>
+                                </li>
+                                <li class="col-sm-12">
+                                    {{ form_widget(form.Ajouter, {'attr': {'class': ' btn-default btn-sm btn'} }) }}
+                                </li>
                             </ul>
-                           {{ form_end(form) }}
                         </div>
                     </div>
                 </div>

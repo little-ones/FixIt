@@ -1,0 +1,55 @@
+{% extends 'baseentrepreneur.html.twig' %}
+{% block header %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+    {{ parent() }}
+    <h1>Projet</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ projet.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ projet.titre }}</td>
+            </tr>
+            <tr>
+                <th>Proprietaire</th>
+                <td>{{ projet.proprietaire }}</td>
+            </tr>
+            <tr>
+                <th>Etat</th>
+                <td>{{ projet.etat }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ projet.description }}</td>
+            </tr>
+            <tr>
+                <th>Duree</th>
+                <td>{{ projet.duree }}</td>
+            </tr>
+            <tr>
+                <th>Equipe</th>
+                <td>{{ projet.equipe }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('projets_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('projets_edit', { 'id': projet.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

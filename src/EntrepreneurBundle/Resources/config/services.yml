@@ -1,0 +1,4 @@
+services:
+#    entrepreneur.example:
+#        class: EntrepreneurBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

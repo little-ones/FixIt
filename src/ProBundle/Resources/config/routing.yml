@@ -1,9 +1,49 @@
+pro_offre:
+    resource: "@ProBundle/Resources/config/routing/offre.yml"
+    prefix:   /offre
+
 pro_homepage:
     path:     /
     defaults: { _controller: ProBundle:Default:index }
 pro_offreshow:
     path:     /mesoffres
-    defaults: { _controller: ProBundle:Offre:ListOffre }
+    defaults: { _controller: ProBundle:OffreC:mesOffre }
 pro_offreajout:
     path:     /ajoutOffre
-    defaults: { _controller: ProBundle:Offre:ajoutOffre }
+    defaults: { _controller: ProBundle:OffreC:AddOffre }
+pro_offremodif:
+    path:     /modifOffre/{id}
+    defaults: { _controller: ProBundle:OffreC:ModifierOffre }
+pro_offrsupp:
+    path:     /suppOffre/{id}
+    defaults: { _controller: ProBundle:OffreC:SuppOffre }
+pro_servicelist:
+    path:     /listService
+    defaults: { _controller: ProBundle:ServiceC:Listservices }
+pro_serviceajout:
+    path:     /ajoutService
+    defaults: { _controller: ProBundle:ServiceC:ajoutService }
+pro_servicemodif:
+    path:     /modifService/{id}
+    defaults: { _controller: ProBundle:ServiceC:ModifierService }
+pro_servicesupp:
+    path:     /suppService/{id}
+    defaults: { _controller: ProBundle:ServiceC:SuppService }
+pro_reservation:
+    path:     /proreservation
+    defaults: { _controller: ProBundle:Default:ListReservation }
+pro_propoffre:
+  path:     /propoffre/{id}
+  defaults: { _controller: ProBundle:Default:Contacter }
+pro_Accepterreservation:
+    path:     /accepteroffre/{id}
+    defaults: { _controller: ProBundle:Default:accepterReservation }
+pro_ignorerreservation:
+    path:     /ignoreroffre/{id}
+    defaults: { _controller: ProBundle:Default:ingorerReservation }
+pro_profil:
+  path:     /profilpro
+  defaults: { _controller: ProBundle:Default:profil }
+pro_reclamation:
+  path:     /reclamationpro
+  defaults: { _controller: ProBundle:Default:contactus }

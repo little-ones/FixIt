@@ -2,7 +2,10 @@
 
 namespace FixitBundle\Controller;
 
+use FixitBundle\Entity\Reclamation;
+use FixitBundle\Form\ReclamationType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
@@ -22,8 +25,25 @@ class DefaultController extends Controller
     {
         return $this->render('@Fixit/Default/gallery.html.twig');
     }
-    public function contactusAction()
+    public function contactusAction(Request $request)
     {
-        return $this->render('@Fixit/Default/contactus.html.twig');
+
+        $reclamation = new Reclamation();
+        $form = $this->createForm(ReclamationType::class, $reclamation);
+        $form = $form->handleRequest($request);
+
+        if ($form->isSubmitted()){
+            $reclamation->setDate( new \DateTime('now'));
+            $reclamation->setUser($this->getUser());
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($reclamation);
+            $em->flush();
+
+            return $this->redirectToRoute("fixit_homepage");
+
+        }
+        return $this->render('@Fixit/Default/contactus.html.twig', array(
+            'form'   => $form->createView(),
+        ));
     }
 }

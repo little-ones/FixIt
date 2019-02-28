@@ -1,0 +1,24 @@
+evenement_index:
+    path:     /
+    defaults: { _controller: "CabinetBundle:Evenement:index" }
+    methods:  GET
+
+evenement_show:
+    path:     /{id}/show
+    defaults: { _controller: "CabinetBundle:Evenement:show" }
+    methods:  GET
+
+evenement_new:
+    path:     /new
+    defaults: { _controller: "CabinetBundle:Evenement:new" }
+    methods:  [GET, POST]
+
+evenement_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CabinetBundle:Evenement:edit" }
+    methods:  [GET, POST]
+
+evenement_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CabinetBundle:Evenement:delete" }
+    methods:  DELETE

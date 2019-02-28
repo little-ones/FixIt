@@ -1,0 +1,35 @@
+offre:
+    path:  /
+    defaults: { _controller: "ProBundle:Offre:index" }
+
+offre_sort:
+    path:  /{field}/{type}/sort
+    defaults: { _controller: "ProBundle:Offre:sort" }
+    requirements: { type: ASC|DESC }
+
+offre_show:
+    path:  /{id}/show
+    defaults: { _controller: "ProBundle:Offre:show" }
+
+offre_new:
+    path:  /new
+    defaults: { _controller: "ProBundle:Offre:new" }
+
+offre_create:
+    path:  /create
+    defaults: { _controller: "ProBundle:Offre:create" }
+    requirements: { _method: post }
+
+offre_edit:
+    path:  /{id}/edit
+    defaults: { _controller: "ProBundle:Offre:edit" }
+
+offre_update:
+    path:  /{id}/update
+    defaults: { _controller: "ProBundle:Offre:update" }
+    requirements: { _method: post|put }
+
+offre_delete:
+    path:  /{id}/delete
+    defaults: { _controller: "ProBundle:Offre:delete" }
+    requirements: { _method: post|delete }

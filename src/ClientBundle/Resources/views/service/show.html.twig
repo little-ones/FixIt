@@ -1,4 +1,4 @@
-{% extends "base.html.twig" %}
+{% extends "baseadmin.html.twig" %}
 
 {% block title %}Service - {{ parent() }}{% endblock %}
 
@@ -14,6 +14,18 @@
             <tr>
                 <th scope="row">Categorie</th>
                 <td>{{ service.categorie }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Date</th>
+                <td>{{ service.date|date('Y-m-d') }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Imagename</th>
+                <td>{{ service.imageName }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Description</th>
+                <td>{{ service.description }}</td>
             </tr>
         </tbody>
     </table>

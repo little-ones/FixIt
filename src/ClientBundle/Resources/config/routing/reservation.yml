@@ -1,0 +1,35 @@
+reservation:
+    path:  /
+    defaults: { _controller: "ClientBundle:Reservation:index" }
+
+reservation_sort:
+    path:  /{field}/{type}/sort
+    defaults: { _controller: "ClientBundle:Reservation:sort" }
+    requirements: { type: ASC|DESC }
+
+reservation_show:
+    path:  /{id}/show
+    defaults: { _controller: "ClientBundle:Reservation:show" }
+
+reservation_new:
+    path:  /new
+    defaults: { _controller: "ClientBundle:Reservation:new" }
+
+reservation_create:
+    path:  /create
+    defaults: { _controller: "ClientBundle:Reservation:create" }
+    requirements: { _method: post }
+
+reservation_edit:
+    path:  /{id}/edit
+    defaults: { _controller: "ClientBundle:Reservation:edit" }
+
+reservation_update:
+    path:  /{id}/update
+    defaults: { _controller: "ClientBundle:Reservation:update" }
+    requirements: { _method: post|put }
+
+reservation_delete:
+    path:  /{id}/delete
+    defaults: { _controller: "ClientBundle:Reservation:delete" }
+    requirements: { _method: post|delete }

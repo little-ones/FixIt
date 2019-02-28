@@ -1,0 +1,38 @@
+{% extends 'baseclient.html.twig'%}
+{% block header %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+    {{ parent() }}
+<div style="margin-left: 100px; margin-right: 100px; padding-top: 40px ; padding-bottom: 20px">
+    <h1>Formation</h1>
+
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ formation.id }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ formation.type }}</td>
+            </tr>
+            <tr>
+                <th>Duree</th>
+                <td>{{ formation.duree }}</td>
+            </tr>
+            <tr>
+                <th>Tuteur</th>
+                <td>{{ formation.tuteur }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('client_EvenementList') }}">Retour a la liste</a>
+        </li>
+
+    </ul>
+</div>
+{% endblock %}

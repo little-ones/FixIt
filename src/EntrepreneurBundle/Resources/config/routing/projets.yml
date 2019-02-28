@@ -1,0 +1,24 @@
+projets_index:
+    path:     /
+    defaults: { _controller: "EntrepreneurBundle:Projets:index" }
+    methods:  GET
+
+projets_show:
+    path:     /{id}/show
+    defaults: { _controller: "EntrepreneurBundle:Projets:show" }
+    methods:  GET
+
+projets_new:
+    path:     /new
+    defaults: { _controller: "EntrepreneurBundle:Projets:new" }
+    methods:  [GET, POST]
+
+projets_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "EntrepreneurBundle:Projets:edit" }
+    methods:  [GET, POST]
+
+projets_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "EntrepreneurBundle:Projets:delete" }
+    methods:  DELETE

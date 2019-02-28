@@ -1,0 +1,26 @@
+{% extends "baseadmin.html.twig" %}
+
+{% block title %}{{ '%entity% creation'|trans({'%entity%': 'Reservation'}, 'admin') }} - {{ parent() }}{% endblock %}
+
+{% block content %}
+    <h1>{{ '%entity% creation'|trans({'%entity%': 'Reservation'}, 'admin') }}</h1>
+
+    {{ form_start(form, {action: path('reservation_create')}) }}
+        {{ form_widget(form) }}
+        <p>
+            <button class="btn btn-primary" type="submit">{{ 'Create'|trans({}, 'admin') }}</button>
+        </p>
+    {{ form_end(form) }}
+
+        
+        <div class="btn-group record_actions">
+
+            <a class="btn btn-info" href="{{ path('reservation') }}">
+                <i class="fa fa-list"></i> {{ 'Back to the list'|trans({}, 'admin') }}
+            </a>
+
+
+        </div>
+
+
+{% endblock %}

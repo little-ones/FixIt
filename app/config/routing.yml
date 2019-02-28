@@ -1,30 +1,30 @@
+entrepreneur:
+    resource: "@EntrepreneurBundle/Resources/config/routing.yml"
+    prefix:   /entrep
+
+cabinet:
+    resource: "@CabinetBundle/Resources/config/routing.yml"
+    prefix:   /cabinet
+
+admin:
+    resource: "@AdminBundle/Resources/config/routing.yml"
+    prefix:   /admin
+
+pro:
+    resource: "@ProBundle/Resources/config/routing.yml"
+    prefix:   /pro
+
 client:
     resource: "@ClientBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /client
 
-backend:
-    resource: "@BackendBundle/Resources/config/routing.yml"
-    prefix:   /admi
-
-frontend:
-    resource: "@FrontendBundle/Resources/config/routing.yml"
-    prefix:   /Fixit
-
-offre:
-    resource: "@OffreBundle/Resources/config/routing.yml"
-    prefix:   /
-
-service:
-    resource: "@ServiceBundle/Resources/config/routing.yml"
-    prefix:   /
-
-admin_user:
-    resource: "@AdminUserBundle/Resources/config/routing.yml"
-    prefix:   /
+fixit:
+    resource: "@FixitBundle/Resources/config/routing.yml"
+    prefix:   /fixit
 
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
-
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+

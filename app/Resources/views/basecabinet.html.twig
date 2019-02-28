@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FIX'IT FORMATION </title>
+    <meta name="keywords"
+          content="HTML5,CSS3,HTML,Template,Multi-Purpose,M_Adnan,Corporate Theme,HandyMan - HandyMan &amp; Handy Man Template">
+    <meta name="description" content="HandyMan - Handy Man, Plumber HTML Template">
+    <meta name="author" content="M_Adnan">
+    {% block steelsheet %}
+        <!-- FONTS ONLINE -->
+        <link href='{{ asset('http://fonts.googleapis.com/css?family=Exo+2:700,600,200,800,300,400,500,100,900') }}'
+              rel='stylesheet' type='text/css'>
+        <link href='{{ asset('http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900') }}' rel='stylesheet'
+              type='text/css'>
+
+        <!--MAIN STYLE-->
+        <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/animate.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/responsive.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="{{ asset('https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js') }}"></script>
+        <script src="{{ asset('https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js') }}"></script>
+        <![endif]-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/rating.css') }}" />
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+    {% endblock %}
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .top-container {
+            background-color: #f1f1f1;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            margin-right: 0px;
+            margin-left: 0px;
+
+        }
+
+        .topright {
+            position: absolute;
+            top: 8px;
+            right: 106px;
+            font-size: 12px;
+
+        }
+
+        .sticky + .content {
+            padding-top: 102px;
+        }
+
+        table {
+            border-collapse:separate;
+            border-spacing:3px;
+        }
+        #btnconnexion {
+            background: rgba(68, 138, 255, 0.71);
+
+            display: inline-block;
+            padding: 5px 10px;
+            font-size: 10px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+
+            border: none;
+            border-radius: 15px;
+
+        }
+        #btnsignup {
+            position: absolute;
+            top: 0px;
+            right: 20px;
+            font-size: 15px;
+            font-family: bold;
+            border: none;
+            background-color: inherit;
+            color: #FFFFFF;
+            padding: 14px 28px;
+            cursor: pointer;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+
+<body>
+
+{% block header %}
+    <!-- <div class="container">   ======= LOGO ========= -->
+    <div class="container">
+        <br>
+        <div class="images_petit"><a href="#."><img src="{{ asset('images/logo.png') }}" alt=""></a></div>
+        <br>
+        <div class="topright">
+            <table  border="0" >
+                <tr>
+                    <th>User name</th><th>Password</th>
+                </tr>
+                <tr>
+                    <th><input type="text" name="us" size="20"> </th>
+                    <th><input type="password" name="pwd" size="20"></th>
+                    <th >
+                        <BUTTON id="btnconnexion" type="submit" value="Connexion" href="{{ path('client_homepage') }}" >
+                            Connexion
+                        </BUTTON>
+                    </th>
+                </tr>
+                <tr>
+                    <th colspan="2" ><a href="">Informations de compte oubliées ?</a></th>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+    <header id="header">
+        <div class="container">
+
+
+            <!--======= NAV =========-->
+            <nav>
+
+                <button class="btn" id="btnsignup">S'inscrire</button>
+
+                <!--======= MENU START =========-->
+                <ul class="ownmenu">
+                    <li class="showhide" style="display: none;"><span class="title"></span><span
+                                class="icon fa fa-bars"></span></li>
+                    <li class="" style=""><a href="{{ path('cabinet_homepage') }}">Home<span class="indicator"><i
+                                        class="fa fa-angle-right"></i></span></a>
+
+                    </li>
+                    <li class="" style=""><a href="{{ path('formation_index') }}">Formations<span class="indicator"><i
+                                        class="fa fa-angle-right"></i></span></a>
+
+                    </li>
+                    <li style=""><a href="{{ path('evenement_index') }}">Evenements</a></li>
+                    <li style=""><a href="{{ path('participation_index') }}">Participation</a></li>
+
+
+                    <!-- MENU PAGE
+                    <li class="fix-sub" style=""><a href="index.html">Pages<span class="indicator"><i class="fa fa-angle-right"></i></span></a>
+
+                        <!--======= MEGA MENU =========-->
+
+                    </li>
+                </ul>
+
+                <!--======= SUBMIT COUPON =========-->
+                <div class="sub-nav-co"><a href="#."><i class="fa fa-search"></i></a></div>
+            </nav>
+        </div>
+    </header>
+{% endblock %}
+
+
+{% block content %}
+
+{% endblock %}
+
+
+{% block footer %}
+    <footer>
+        <div class="container">
+            <ul class="row">
+                <li class="col-sm-3"><img class="{{ asset('img-responsive') }}"
+                                          src="{{ asset('images/footer-img.png') }}" alt=""></li>
+
+                <!--======= HAPPY CLIENTS =========-->
+                <li class="col-sm-3">
+
+                    <!--======= COUNTER =========-->
+                    <div class="counters"><i class="fa fa-heart-o"></i>
+                        <p>HAPPY CLIENTS</p>
+                        <span class="count1"></span></div>
+                    <!--======= LINKS =========-->
+                    <h5>site links</h5>
+                    <hr>
+                    <div class="links">
+                        <ul>
+                            <li><a href="#.">About Us</a></li>
+                            <li><a href="#."> Our Staffs </a></li>
+                            <li><a href="#."> Recent Projects </a></li>
+                            <li><a href="#."> Latest News </a></li>
+                            <li><a href="#."> Pricing Details</a></li>
+                            <li><a href="#."> Contact Us</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!--======= HAPPY CLIENTS =========-->
+                <li class="col-sm-3">
+
+                    <!--======= COUNTER =========-->
+                    <div class="counters"><i class="fa fa-rocket"></i>
+                        <p>year of service</p>
+                        <span class="count2"></span></div>
+                    <!--======= LINKS =========-->
+                    <h5>services</h5>
+                    <hr>
+                    <div class="links">
+                        <ul>
+                            <li><a href="#.">HandyMan Repairs</a></li>
+                            <li><a href="#."> Drain Cleaning</a></li>
+                            <li><a href="#."> Gas Lines</a></li>
+                            <li><a href="#."> Sewer Lines</a></li>
+                            <li><a href="#."> Water Damage Prevention</a></li>
+                            <li><a href="#."> HandyMan Inspection</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!--======= HAPPY CLIENTS =========-->
+                <li class="col-sm-3">
+
+                    <!--======= COUNTER =========-->
+                    <div class="counters"><i class="fa fa-trophy"></i>
+                        <p>awards won</p>
+                        <span class="count3"></span></div>
+                    <!--======= LINKS =========-->
+                    <h5>Contact</h5>
+                    <hr>
+                    <p>Address: 44 New Design Street,
+                        Melbourne 005 </p>
+                    <p>Phone: +61 (123) 456 789</p>
+                    <p>Fax: +91 5464 213</p>
+                    <p>Email: info@example.com</p>
+
+                    <!--======= SOCIAL ICONS =========-->
+
+                    <ul class="social_icons">
+                        <li class="facebook"><a href="#."><i class="fa fa-facebook"></i> </a></li>
+                        <li class="twitter"><a href="#."><i class="fa fa-twitter"></i> </a></li>
+                        <li class="linkedin"><a href="#."><i class="fa fa-linkedin"></i> </a></li>
+                        <li class="tumblr"><a href="#."><i class="fa fa-tumblr"></i> </a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="rights">
+            <p>Copyright © 2019 FIX'it. All Rights Reserved.</p>
+        </div>
+    </footer>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        window.onscroll = function () {
+            myFunction()
+        };
+
+        var header = document.getElementById("header");
+        var sticky = header.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+        }
+    </script>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>c
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block script %}
+    <script src="{{ asset('js/jquery-1.11.0.min.js') }}"></script>
+    <script src="{{ asset('js/wow.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.stellar.js') }}"></script>
+    <script src="{{ asset('js/jquery.isotope.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.flexslider-min.js') }}"></script>
+    <script src="{{ asset('js/counter.js') }}"></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.sticky.js') }}"></script>
+    <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('js/own-menu.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="{{ asset('js/rating.js') }}"></script>
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/5c770edaa726ff2eea59ce01/default';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+{% endblock %}
+
+
+</body>
+</html>

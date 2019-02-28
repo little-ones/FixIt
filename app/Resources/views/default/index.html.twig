@@ -1,76 +1,587 @@
 {% extends 'base.html.twig' %}
-
-{% block body %}
-    <div id="wrapper">
-        <div id="container">
-            <div id="welcome">
-                <h1><span>Welcome to</span> Symfony {{ constant('Symfony\\Component\\HttpKernel\\Kernel::VERSION') }}</h1>
-            </div>
-
-            <div id="status">
-                <p>
-                    <svg id="icon-status" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z" fill="#759E1A"/></svg>
-
-                    Your application is now ready. You can start working on it at:
-                    <code>{{ base_dir }}</code>
-                </p>
-            </div>
-
-            <div id="next">
-                <h2>What's next?</h2>
-                <p>
-                    <svg id="icon-book" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="-12.5 9 64 64" enable-background="new -12.5 9 64 64" xml:space="preserve">
-                        <path fill="#AAA" d="M6.8,40.8c2.4,0.8,4.5-0.7,4.9-2.5c0.2-1.2-0.3-2.1-1.3-3.2l-0.8-0.8c-0.4-0.5-0.6-1.3-0.2-1.9
-                            c0.4-0.5,0.9-0.8,1.8-0.5c1.3,0.4,1.9,1.3,2.9,2.2c-0.4,1.4-0.7,2.9-0.9,4.2l-0.2,1c-0.7,4-1.3,6.2-2.7,7.5
-                            c-0.3,0.3-0.7,0.5-1.3,0.6c-0.3,0-0.4-0.3-0.4-0.3c0-0.3,0.2-0.3,0.3-0.4c0.2-0.1,0.5-0.3,0.4-0.8c0-0.7-0.6-1.3-1.3-1.3
-                            c-0.6,0-1.4,0.6-1.4,1.7s1,1.9,2.4,1.8c0.8,0,2.5-0.3,4.2-2.5c2-2.5,2.5-5.4,2.9-7.4l0.5-2.8c0.3,0,0.5,0.1,0.8,0.1
-                            c2.4,0.1,3.7-1.3,3.7-2.3c0-0.6-0.3-1.2-0.9-1.2c-0.4,0-0.8,0.3-1,0.8c-0.1,0.6,0.8,1.1,0.1,1.5c-0.5,0.3-1.4,0.6-2.7,0.4l0.3-1.3
-                            c0.5-2.6,1-5.7,3.2-5.8c0.2,0,0.8,0,0.8,0.4c0,0.2,0,0.2-0.2,0.5c-0.2,0.3-0.3,0.4-0.2,0.7c0,0.7,0.5,1.1,1.2,1.1
-                            c0.9,0,1.2-1,1.2-1.4c0-1.2-1.2-1.8-2.6-1.8c-1.5,0.1-2.8,0.9-3.7,2.1c-1.1,1.3-1.8,2.9-2.3,4.5c-0.9-0.8-1.6-1.8-3.1-2.3
-                            c-1.1-0.7-2.3-0.5-3.4,0.3c-0.5,0.4-0.8,1-1,1.6c-0.4,1.5,0.4,2.9,0.8,3.4l0.9,1c0.2,0.2,0.6,0.8,0.4,1.5c-0.3,0.8-1.2,1.3-2.1,1
-                            c-0.4-0.2-1-0.5-0.9-0.9c0.1-0.2,0.2-0.3,0.3-0.5s0.1-0.3,0.1-0.3c0.2-0.6-0.1-1.4-0.7-1.6c-0.6-0.2-1.2,0-1.3,0.8
-                            C4.3,38.4,4.7,40,6.8,40.8z M46.1,20.9c0-4.2-3.2-7.5-7.1-7.5h-3.8C34.8,10.8,32.7,9,30.2,9L-2.3,9.1c-2.8,0.1-4.9,2.4-4.9,5.4
-                            L-7,58.6c0,4.8,8.1,13.9,11.6,14.1l34.7-0.1c3.9,0,7-3.4,7-7.6L46.1,20.9z M-0.3,36.4c0-8.6,6.5-15.6,14.5-15.6
-                            c8,0,14.5,7,14.5,15.6S22.1,52,14.2,52C6.1,52-0.3,45-0.3,36.4z M42.1,65.1c0,1.8-1.5,3.1-3.1,3.1H4.6c-0.7,0-3-1.8-4.5-4.4h30.4
-                            c2.8,0,5-2.4,5-5.4V17.9h3.7c1.6,0,2.9,1.4,2.9,3.1V65.1L42.1,65.1z"/>
-                    </svg>
-
-                    Read the documentation to learn
-                    <a href="https://symfony.com/doc/{{ constant('Symfony\\Component\\HttpKernel\\Kernel::VERSION')[:3] }}/page_creation.html">
-                        How to create your first page in Symfony
-                    </a>
-                </p>
-            </div>
-
-        </div>
-    </div>
+{% block header %}
+    {{ parent() }}
 {% endblock %}
+{% block content %}
+    {{ parent() }}
 
-{% block stylesheets %}
-<style>
-    body { background: #F5F5F5; font: 18px/1.5 sans-serif; }
-    h1, h2 { line-height: 1.2; margin: 0 0 .5em; }
-    h1 { font-size: 36px; }
-    h2 { font-size: 21px; margin-bottom: 1em; }
-    p { margin: 0 0 1em 0; }
-    a { color: #0000F0; }
-    a:hover { text-decoration: none; }
-    code { background: #F5F5F5; max-width: 100px; padding: 2px 6px; word-wrap: break-word; }
-    #wrapper { background: #FFF; margin: 1em auto; max-width: 800px; width: 95%; }
-    #container { padding: 2em; }
-    #welcome, #status { margin-bottom: 2em; }
-    #welcome h1 span { display: block; font-size: 75%; }
-    #icon-status, #icon-book { float: left; height: 64px; margin-right: 1em; margin-top: -4px; width: 64px; }
-    #icon-book { display: none; }
+    <body style="">
+    <!-- Page Wrap ===========================================-->
+    <div id="wrap">
 
-    @media (min-width: 768px) {
-        #wrapper { width: 80%; margin: 2em auto; }
-        #icon-book { display: inline-block; }
-        #status a, #next a { display: block; }
 
-        @-webkit-keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
-        @keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
-        .sf-toolbar { opacity: 0; -webkit-animation: fade-in 1s .2s forwards; animation: fade-in 1s .2s forwards;}
-    }
-</style>
+
+        <!--======= HEADER =========-->
+
+        <!--======= BANNER =========-->
+        <div id="banner">
+            <div class="flex-banner">
+                <ul class="slides">
+                    <li class="flex-active-slide" style="width: 100%; float: left; margin-right: -100%; position: relative; display: block; z-index: 2; opacity: 1;"> <img src="{{ asset('images/slide-1.jpg') }}" alt="" draggable="false">
+
+                        <!--======= BANNER INNER =========-->
+                        <div class="banner-up">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-5">
+
+                                        <!--======= BANNER FORM =========-->
+                                        <div class="bnr-form">
+                                            <h3>Quick service request</h3>
+                                            <h6>24 housrs service available!</h6>
+                                            <!--<div id="banner_message" class="success-msg"> <i class="fa fa-paper-plane-o"></i>Thank You. Your Message has been Submitted</div>-->
+                                            <form role="form" id="banner_form" method="post" onsubmit="return false">
+                                                <ul class="row">
+                                                    <li class="col-sm-6">
+                                                        <input type="text" name="name" id="name" placeholder="Name" required="">
+                                                    </li>
+                                                    <li class="col-sm-6">
+                                                        <input type="text" name="phone" id="phone" placeholder="PHONE" required="">
+                                                    </li>
+                                                    <li class="col-sm-12">
+                                                        <input type="text" name="email" id="email" placeholder="email" required="">
+                                                    </li>
+                                                    <li class="col-sm-12">
+                                                        <textarea name="msgform" id="msgform" rows="5" placeholder="Description of work or services needed"></textarea>
+                                                    </li>
+                                                    <li class="col-sm-12">
+                                                        <button type="submit" value="submit" class="btn" id="btn_submit" onclick="bannerProceed();">SUBMIT</button>
+                                                    </li>
+                                                </ul>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <!--======= BANNER IMAGES =========-->
+                                    <div class="col-sm-7">
+                                        <section> <img class="img-responsive pull-right" src="{{ asset('images/slide-img-1.png') }}" alt="" draggable="false"> </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li style="width: 100%; float: left; margin-right: -100%; position: relative; display: block; z-index: 1; opacity: 0;" class=""> <img src="{{ asset('images/slide-2.jpg') }}" alt="" draggable="false">
+
+                        <!--======= BANNER INNER =========-->
+                        <div class="banner-up">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <section> <img class="img-responsive pull-left" src="{{ asset('images/slide-img-2.png') }}" alt="" draggable="false"> </section>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <div class="text-sec">
+                                            <section>
+                                                <h1>just call <span>+61 (123) 456 789</span></h1>
+                                            </section>
+                                            <section>
+                                                <h1>we are always  ready to service</h1>
+                                            </section>
+                                            <a href="#." class="btn btn-1">get quote</a><a href="#." class="btn">about us</a> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ol class="flex-control-nav flex-control-paging"><li><a class="flex-active">1</a></li><li><a class="">2</a></li></ol><ul class="flex-direction-nav"><li><a class="flex-prev" href="#">Previous</a></li><li><a class="flex-next" href="#">Next</a></li></ul></div>
+        </div>
+
+        <!--======= SERVICES =========-->
+        <br>
+        <section class="services">
+            <div class="container">
+
+                <!--======= SERVICES ROW =========-->
+                <ul class="row">
+
+                    <!--======= SERVICES =========-->
+                    <li class="col-md-4 padding-r-80">
+                        <div class="tittle">
+                            <h2 class="text-left">we fix all
+                                your HandyMan
+                                problems</h2>
+                        </div>
+                        <p>Sedquis viverra enim. Vivamus aliquet rutrusm dui a varius. Mauris ornoare tortor in
+                            eleifends blanditullam ut legula et neque Praesent egset bibendum purus quis.</p>
+                        <a href="#." class="btn">about more</a></li>
+
+                    <!--======= SERVICES =========-->
+                    <li class="col-md-4">
+                        <div class="sec-in"><i class="fa fa-clock-o"></i>
+                            <h6>24/7 Availability</h6>
+                            <p>Vivamus aliquet rutrusm dui a varius
+                                Mauris ornoare tortor. </p>
+                            <a href="#." class="go-right"><i class="fa fa-angle-right"></i></a></div>
+                    </li>
+
+                    <!--======= SERVICES =========-->
+                    <li class="col-md-4">
+                        <div class="sec-in"><i class="fa fa-user"></i>
+                            <h6>genius workers</h6>
+                            <p>Vivamus aliquet rutrusm dui a varius
+                                Mauris ornoare tortor. </p>
+                            <a href="#." class="go-right"><i class="fa fa-angle-right"></i></a></div>
+                    </li>
+
+                    <!--======= SERVICES =========-->
+                    <li class="col-md-4">
+                        <div class="sec-in"><i class="fa fa-usd"></i>
+                            <h6>low pricing</h6>
+                            <p>Vivamus aliquet rutrusm dui a varius
+                                Mauris ornoare tortor. </p>
+                            <a href="#." class="go-right"><i class="fa fa-angle-right"></i></a></div>
+                    </li>
+
+                    <!--======= SERVICES =========-->
+                    <li class="col-md-4">
+                        <div class="sec-in"><i class="fa fa-thumbs-o-up"></i>
+                            <h6>free estimation</h6>
+                            <p>Vivamus aliquet rutrusm dui a varius
+                                Mauris ornoare tortor. </p>
+                            <a href="#." class="go-right"><i class="fa fa-angle-right"></i></a></div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!--======= WELCOME =========-->
+        <section class="welcome">
+            <div class="container">
+                <div class="tittle">
+                    <h2>welcome to our HandyMan</h2>
+                    <p>Sedquis viverra enim. Vivamus aliquet rutrusm dui a varius. Mauris ornoare tortor in eleifends blanditullam</p>
+                </div>
+            </div>
+            <img class="img-responsive" src="{{ asset('images/welcome-img.jpg')}}" alt="">
+        </section>
+
+        <!--======= OFFER SERVICES =========-->
+
+        <section class="offer-services">
+            <div class="container">
+                <!--======= TITTLE =========-->
+                <div class="tittle">
+                    <h2>welcome to our HandyMan</h2>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div role="tabpanel">
+                            <!--======= NAV TABS =========-->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#plumb" role="tab" data-toggle="tab">HandyMan Repairs <i class="animated bounceInLeft fa fa-long-arrow-right"></i></a></li>
+                                <li role="presentation"><a href="#drain" role="tab" data-toggle="tab">Drain Cleaning <i class="animated bounceInLeft fa fa-long-arrow-right"></i></a></li>
+                                <li role="presentation"><a href="#gas" role="tab" data-toggle="tab">GAS LINES <i class="animated bounceInLeft fa fa-long-arrow-right"></i></a></li>
+                                <li role="presentation"><a href="#sewer" role="tab" data-toggle="tab">SEWER LINES <i class="animated bounceInLeft fa fa-long-arrow-right"></i></a></li>
+                                <li role="presentation"><a href="#water" role="tab" data-toggle="tab">WATER DAMAGE PREVENTION <i class="animated bounceInLeft fa fa-long-arrow-right"></i></a></li>
+                                <li role="presentation"><a href="#tankless" role="tab" data-toggle="tab">TANKLESS WATER HEATERS <i class="animated bounceInLeft fa fa-long-arrow-right"></i></a></li>
+                                <li role="presentation"><a href="#plimbing" role="tab" data-toggle="tab">HandyMan INSPECTIONS <i class="animated bounceInLeft fa fa-long-arrow-right"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--======= NAV TABS CONTENT =========-->
+                    <div class="col-sm-9">
+                        <div class="tab-content">
+
+                            <!--======= HandyMan Repairs =========-->
+                            <div role="tabpanel" class="tab-pane animated fadeIn active" id="plumb">
+                                <div class="row">
+                                    <div class="col-sm-7">
+                                        <h4>HandyMan Repairs</h4>
+                                        <p>Our experts have the state of the art tools,electronic equipment, and supplies to unclog any drain in a timely manner. </p>
+                                        <ul>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Sinks and Faucets</p>
+                                            </li>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Hot Water Dispenser </p>
+                                            </li>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Polybutylene Pipe Replacement </p>
+                                            </li>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Bathtubs and Showers </p>
+                                            </li>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Sump Pump and Sewage Ejector Pumps </p>
+                                            </li>
+                                        </ul>
+                                        <a href="#." class="btn">LEARN MORE</a> </div>
+                                    <div class="col-sm-5"> <img class="img-responsive img-up animated fadeInRight" src="{{ asset('images/offer-img.jpg')}}" alt=""> </div>
+                                </div>
+                            </div>
+
+                            <!--======= HandyMan Repairs =========-->
+                            <div role="tabpanel" class="tab-pane animated fadeIn" id="drain">
+                                <div class="row">
+                                    <div class="col-sm-7">
+                                        <h4>Drain Cleaning</h4>
+                                        <p>Our experts have the state of the art tools,electronic equipment, and supplies to unclog any drain in a timely manner. </p>
+                                        <ul>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Sinks and Faucets</p>
+                                            </li>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Hot Water Dispenser </p>
+                                            </li>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Polybutylene Pipe Replacement </p>
+                                            </li>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Bathtubs and Showers </p>
+                                            </li>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Sump Pump and Sewage Ejector Pumps </p>
+                                            </li>
+                                        </ul>
+                                        <a href="#." class="btn">LEARN MORE</a> </div>
+                                    <div class="col-sm-5"> <img class="img-responsive img-up animated fadeInRight" src="{{ asset('images/offer-img.jpg')}}" alt=""> </div>
+                                </div>
+                            </div>
+
+                            <!--======= GAS LINES =========-->
+                            <div role="tabpanel" class="tab-pane animated fadeIn" id="gas">
+                                <div class="row">
+                                    <div class="col-sm-7">
+                                        <h4>GAS LINES </h4>
+                                        <p>Our experts have the state of the art tools,electronic equipment, and supplies to unclog any drain in a timely manner. </p>
+                                        <ul>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Sinks and Faucets</p>
+                                            </li>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Hot Water Dispenser </p>
+                                            </li>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Polybutylene Pipe Replacement </p>
+                                            </li>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Bathtubs and Showers </p>
+                                            </li>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Sump Pump and Sewage Ejector Pumps </p>
+                                            </li>
+                                        </ul>
+                                        <a href="#." class="btn">LEARN MORE</a> </div>
+                                    <div class="col-sm-5"> <img class="img-responsive img-up animated fadeInRight" src="{{ asset('images/offer-img.jpg')}}" alt=""> </div>
+                                </div>
+                            </div>
+
+                            <!--======= SEWER LINES =========-->
+                            <div role="tabpanel" class="tab-pane animated fadeIn" id="sewer">
+                                <div class="row">
+                                    <div class="col-sm-7">
+                                        <h4>SEWER LINES</h4>
+                                        <p>Our experts have the state of the art tools,electronic equipment, and supplies to unclog any drain in a timely manner. </p>
+                                        <ul>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Sinks and Faucets</p>
+                                            </li>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Hot Water Dispenser </p>
+                                            </li>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Polybutylene Pipe Replacement </p>
+                                            </li>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Bathtubs and Showers </p>
+                                            </li>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Sump Pump and Sewage Ejector Pumps </p>
+                                            </li>
+                                        </ul>
+                                        <a href="#." class="btn">LEARN MORE</a> </div>
+                                    <div class="col-sm-5"> <img class="img-responsive img-up animated fadeInRight" src="{{ asset('images/offer-img.jpg')}}" alt=""> </div>
+                                </div>
+                            </div>
+
+                            <!--======= WATER DAMAGE PREVENTION =========-->
+                            <div role="tabpanel" class="tab-pane animated fadeIn" id="water">
+                                <div class="row">
+                                    <div class="col-sm-7">
+                                        <h4>WATER DAMAGE PREVENTION</h4>
+                                        <p>Our experts have the state of the art tools,electronic equipment, and supplies to unclog any drain in a timely manner. </p>
+                                        <ul>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Sinks and Faucets</p>
+                                            </li>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Hot Water Dispenser </p>
+                                            </li>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Polybutylene Pipe Replacement </p>
+                                            </li>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Bathtubs and Showers </p>
+                                            </li>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Sump Pump and Sewage Ejector Pumps </p>
+                                            </li>
+                                        </ul>
+                                        <a href="#." class="btn">LEARN MORE</a> </div>
+                                    <div class="col-sm-5"> <img class="img-responsive img-up animated fadeInRight" src="{{ asset('images/offer-img.jpg')}}" alt=""> </div>
+                                </div>
+                            </div>
+
+                            <!--======= TANKLESS WATER HEATERS =========-->
+                            <div role="tabpanel" class="tab-pane animated fadeIn" id="tankless">
+                                <div class="row">
+                                    <div class="col-sm-7">
+                                        <h4>TANKLESS WATER HEATERS</h4>
+                                        <p>Our experts have the state of the art tools,electronic equipment, and supplies to unclog any drain in a timely manner. </p>
+                                        <ul>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Sinks and Faucets</p>
+                                            </li>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Hot Water Dispenser </p>
+                                            </li>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Polybutylene Pipe Replacement </p>
+                                            </li>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Bathtubs and Showers </p>
+                                            </li>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Sump Pump and Sewage Ejector Pumps </p>
+                                            </li>
+                                        </ul>
+                                        <a href="#." class="btn">LEARN MORE</a> </div>
+                                    <div class="col-sm-5"> <img class="img-responsive img-up animated fadeInRight" src="{{ asset('images/offer-img.jpg')}}" alt=""> </div>
+                                </div>
+                            </div>
+
+                            <!--======= HandyMan INSPECTIONS =========-->
+                            <div role="tabpanel" class="tab-pane animated fadeIn" id="plimbing">
+                                <div class="row">
+                                    <div class="col-sm-7">
+                                        <h4>HandyMan INSPECTIONS </h4>
+                                        <p>Our experts have the state of the art tools,electronic equipment, and supplies to unclog any drain in a timely manner. </p>
+                                        <ul>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Sinks and Faucets</p>
+                                            </li>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Hot Water Dispenser </p>
+                                            </li>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Polybutylene Pipe Replacement </p>
+                                            </li>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Bathtubs and Showers </p>
+                                            </li>
+                                            <li>
+                                                <p><i class="fa fa-tint"></i> Sump Pump and Sewage Ejector Pumps </p>
+                                            </li>
+                                        </ul>
+                                        <a href="#." class="btn">LEARN MORE</a> </div>
+                                    <div class="col-sm-5"> <img class="img-responsive img-up animated fadeInRight" src="{{ asset('images/offer-img.jpg')}}" alt=""> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--======= GALLERY =========-->
+        <section class="service-part">
+
+            <div class="container">
+                <div class="tittle">
+                    <h2>our works gallery</h2>
+                </div>
+                <ul class="row">
+                    <li class="col-md-4">
+                        <section> <img class="img-responsive" src="{{ asset('images/ser-img-1.jpg') }}" alt="">
+                            <div class="ser-details"> <a href="#.">emergecy service</a> </div>
+                        </section>
+                    </li>
+                    <li class="col-md-4">
+                        <section> <img class="img-responsive" src="{{ asset('images/ser-img-2.jpg') }}" alt="">
+                            <div class="ser-details"> <a href="#.">residential service</a> </div>
+                        </section>
+                    </li>
+                    <li class="col-md-4">
+                        <section> <img class="img-responsive" src="{{ asset('images/ser-img-3.jpg')}}" alt="">
+                            <div class="ser-details"> <a href="#.">commercial service</a> </div>
+                        </section>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!--======= POPUP PROJECTS =========-->
+        <div id="pop-project" class="zoom-anim-dialog mfp-hide pop-project">
+            <div class="pop_up">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <div id="carousel-img" class="carousel slide" data-ride="carousel">
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active"> <img src="{{ asset('images/pop-img-1.jpg')}}" alt=""> </div>
+                                <div class="item"> <img src="{{ asset('images/pop-img-1.jpg')}}" alt=""> </div>
+                                <div class="item"> <img src="{{ asset('images/pop-img-1.jpg')}}" alt=""> </div>
+                                <div class="item"> <img src="{{ asset('images/pop-img-1.jpg')}}" alt=""> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-img" data-slide-to="0" class="active"><img class="img-responsive" src="{{ asset('images/detail-img-1.jpg')}}" alt=""></li>
+                            <li data-target="#carousel-img" data-slide-to="1"> <img class="img-responsive" src="{{ asset('images/detail-img-2.jpg')}}" alt=""></li>
+                            <li data-target="#carousel-img" data-slide-to="2"><img class="img-responsive" src="{{ asset('images/detail-img-3.jpg')}}" alt=""></li>
+                            <li data-target="#carousel-img" data-slide-to="2"><img class="img-responsive" src="{{ asset('images/detail-img-2.jpg')}}" alt=""></li>
+                        </ol>
+                    </div>
+
+                    <!--======= POPUP PROJECTS DETAILS =========-->
+                    <div class="projects-details">
+                        <div class="col-sm-8">
+                            <h3>sewer line Replacement</h3>
+                            <p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enimsa ipsam voluptatem quia voluptas sit asper niaturu odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptaitem sequi tha nesciunt. Neque porro quisquam est, </p>
+                        </div>
+                        <div class="col-sm-4">
+                            <ul>
+                                <li>
+                                    <p><span>date :</span> Mar 18, 2015</p>
+                                </li>
+                                <li>
+                                    <p><span>Client : </span>ven diesel home</p>
+                                </li>
+                                <li>
+                                    <p><span>work: </span> gas &amp; Sewer Line Replacement</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--======= CLIENTS FEEDBACK =========-->
+        <section class="clients">
+            <div class="container">
+
+                <!--======= TITTLE =========-->
+                <div class="tittle">
+                    <h2>feedback from clients</h2>
+                </div>
+                <ul class="row">
+
+                    <!--======= CLIENTS WORD =========-->
+                    <li class="col-md-4">
+                        <div class="avatar"> <img src="{{ asset('images/avatar-1.jpg')}}" alt=""> </div>
+                        <div class="clients-in">
+                            <p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae qicknit vitae dicta sunt explicabo. </p>
+                            <h6>Jenny Nair -<span> Home Owner</span></h6>
+                        </div>
+                    </li>
+
+                    <!--======= CLIENTS WORD =========-->
+                    <li class="col-md-4">
+                        <div class="avatar"> <img src="{{ asset('images/avatar-2.jpg')}}" alt=""> </div>
+                        <div class="clients-in">
+                            <p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae qicknit vitae dicta sunt explicabo. </p>
+                            <h6>Jenny Nair -<span> Home Owner</span></h6>
+                        </div>
+                    </li>
+
+                    <!--======= CLIENTS WORD =========-->
+                    <li class="col-md-4">
+                        <div class="avatar"> <img src="{{ asset('images/avatar-3.jpg')}}" alt=""> </div>
+                        <div class="clients-in">
+                            <p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae qicknit vitae dicta sunt explicabo. </p>
+                            <h6>Jenny Nair -<span> Home Owner</span></h6>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!--======= CLIENTS FEEDBACK =========-->
+        <section class="blog">
+            <div class="container">
+
+                <!--======= TITTLE =========-->
+                <div class="tittle">
+                    <h2>news from blog</h2>
+                </div>
+                <ul class="row">
+
+                    <!--======= BLOG 1 =========-->
+                    <li class="col-sm-4">
+                        <div class="b-inner"> <img class="img-responsive" src="{{ asset('images/b-img-1.jpg  ')}}" alt="">
+                            <div class="b-details"> <span><i class="fa fa-clock-o"></i> mar 23 ,2015</span> <a href="#.">we provide 24 hours service</a> </div>
+                        </div>
+                    </li>
+
+                    <!--======= BLOG 2 =========-->
+                    <li class="col-sm-4">
+                        <div class="b-inner"> <img class="img-responsive" src="{{ asset('images/b-img-2.jpg')}}" alt="">
+                            <div class="b-details"> <span><i class="fa fa-clock-o"></i> mar 23 ,2015</span> <a href="#.">we provide 24 hours service</a> </div>
+                        </div>
+                    </li>
+
+                    <!--======= BLOG 3 =========-->
+                    <li class="col-sm-4">
+                        <div class="b-inner"> <img class="img-responsive" src="{{ asset('images/b-img-3.jpg'  )}}" alt="">
+                            <div class="b-details"> <span><i class="fa fa-clock-o"></i> mar 23 ,2015</span> <a href="#.">we provide 24 hours service</a> </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!--======= CLIENTS FEEDBACK =========-->
+
+
+        <!--======= FOOTER =========-->
+
+    </div>
+    <script src="{{ asset('js/jquery-1.11.0.min.js')}}"></script>
+    <script src="{{ asset('js/wow.min.js')}}"></script>
+    <script src="{{ asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{ asset('js/jquery.stellar.js')}}"></script>
+    <script src="{{ asset('js/jquery.isotope.min.js')}}"></script>
+    <script src="{{ asset('js/jquery.flexslider-min.js')}}"></script>
+    <script src="{{ asset('js/counter.js')}}"></script>
+    <script src="{{ asset('js/owl.carousel.min.js')}}"></script>
+    <script src="{{ asset('js/jquery.sticky.js')}}"></script>
+    <script src="{{ asset('js/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{ asset('js/own-menu.js')}}"></script>
+    <script src="{{ asset('js/main.js')}}"></script>
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+
+    </script>
+    </body>
 {% endblock %}

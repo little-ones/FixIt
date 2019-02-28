@@ -36,22 +36,21 @@
                                                   readonly>{{ i.description }}</textarea>
 
                                         <a class="btn btn-default btn-sm"
-                                           href="">
+                                           href="{{ path('pro_offremodif' , {id : i.id }) }}">
                                             <i class="fa fa-edit"></i> {{ 'edit'|trans({}, 'admin') }}
                                         </a>
 
                                         <a class="btn btn-default btn-sm"
-                                           href="">
+                                           href="{{ path('pro_offrsupp', {id : i.id }) }}">
                                             <i class="fa fa-trash-o"></i> {{ 'delete'|trans({}, 'admin') }}
                                         </a>
 
                                         <span style="margin-left: 220px"><i
-                                                    class="fa fa-calendar "></i> {{ i.date | date("m/d/Y") }} </span>
+                                                    class="fa fa-calendar "></i> {{ i.dateAjout | date("m/d/Y") }} </span>
                                     </li>
                                 </ul>
 
                             </div>
-
                         {% endfor %}
                     </li>
                     <!--======= SIDE BAR =========-->
@@ -60,10 +59,10 @@
 
 
                             <!--=======  RECENT POST =========-->
-                            <h5>offres récenement ajoutés </h5>
+                            <h5>Catégorie de Service récenement ajoutés </h5>
                             <div class="tw-widgets">
                                 <ul>
-
+                                    {% for i in services %}
                                         <!--=======  RECENT POST =========-->
                                         <li>
                                             <ul class="wid-in">
@@ -72,15 +71,13 @@
                                                                       alt=""></a></li>
                                                 <li>
                                                     <div class="img-side"></div>
-                                                    <a href="#.">  </a> <br>
+                                                    <a href="#."> {{ i.categorie }} </a> <br>
 
-                                                    <span><i
-                                                                class="fa fa-calendar"></i> </span>
                                                 </li>
                                             </ul>
                                         </li>
 
-
+                                    {% endfor %}
                                 </ul>
                             </div>
 

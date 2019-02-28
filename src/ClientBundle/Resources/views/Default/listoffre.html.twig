@@ -10,6 +10,87 @@
     <!-- Page Wrap ===========================================-->
     <div id="wrap">
 
+        <div id="banner">
+            <div class="flex-banner">
+                <ul class="slides">
+                    <li class="flex-active-slide" style="width: 100%; float: left; margin-right: -100%; position: relative; display: block; z-index: 2; opacity: 1;"> <img src="{{ asset('images/slide-1.jpg') }}" alt="" draggable="false">
+
+                        <!--======= BANNER INNER =========-->
+                        <div class="banner-up">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-5">
+
+                                        <!--======= BANNER FORM =========-->
+                                        <div class="bnr-form">
+                                            <h3>Quick service request</h3>
+                                            <h6>24 housrs service available!</h6>
+                                            <!--<div id="banner_message" class="success-msg"> <i class="fa fa-paper-plane-o"></i>Thank You. Your Message has been Submitted</div>-->
+                                            <form role="form" id="banner_form" method="post" onsubmit="return false">
+                                                <ul class="row">
+                                                    <li class="col-sm-6">
+                                                        <input type="text" name="name" id="name" placeholder="Name" required="">
+                                                    </li>
+                                                    <li class="col-sm-6">
+                                                        <input type="text" name="phone" id="phone" placeholder="PHONE" required="">
+                                                    </li>
+                                                    <li class="col-sm-12">
+                                                        <input type="text" name="email" id="email" placeholder="email" required="">
+                                                    </li>
+                                                    <li class="col-sm-12">
+                                                        <textarea name="msgform" id="msgform" rows="5" placeholder="Description of work or services needed"></textarea>
+                                                    </li>
+                                                    <li class="col-sm-12">
+                                                        <button type="submit" value="submit" class="btn" id="btn_submit" onclick="bannerProceed();">SUBMIT</button>
+                                                    </li>
+                                                </ul>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <!--======= BANNER IMAGES =========-->
+                                    <div class="col-sm-7">
+                                        <section> <img class="img-responsive pull-right" src="{{ asset('images/slide-img-1.png') }}" alt="" draggable="false"> </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li style="width: 100%; float: left; margin-right: -100%; position: relative; display: block; z-index: 1; opacity: 0;" class=""> <img src="{{ asset('images/slide-2.jpg') }}" alt="" draggable="false">
+
+                        <!--======= BANNER INNER =========-->
+                        <div class="banner-up">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        <section> <img class="img-responsive pull-left" src="{{ asset('images/slide-img-2.png') }}" alt="" draggable="false"> </section>
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <div class="text-sec">
+                                            <section>
+                                                <h1>just call <span>+61 (123) 456 789</span></h1>
+                                            </section>
+                                            <section>
+                                                <h1>we are always  ready to service</h1>
+                                            </section>
+                                            <a href="#." class="btn btn-1">get quote</a><a href="#." class="btn">about us</a> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <ol class="flex-control-nav flex-control-paging"><li><a class="flex-active">1</a></li><li><a class="">2</a></li></ol><ul class="flex-direction-nav"><li><a class="flex-prev" href="#">Previous</a></li><li><a class="flex-next" href="#">Next</a></li></ul></div>
+        </div>
+        <section class="welcome">
+            <div class="container">
+                <div class="tittle">
+                    <h2>welcome to our HandyMan</h2>
+                    <p>Sedquis viverra enim. Vivamus aliquet rutrusm dui a varius. Mauris ornoare tortor in eleifends blanditullam</p>
+                </div>
+            </div>
+            <img class="img-responsive" src="{{ asset('images/welcome-img.jpg')}}" alt="">
+        </section>
 
         <!--======= BLOG =========-->
         <section class="blog">
@@ -23,15 +104,18 @@
                             <div class="admin-info">
 
                                 <ul class="row">
-                                    <li class="col-xs-2 no-padding"><img class="img-responsive"
-                                                                         src="{{ asset('images/team-1.jpg') }}"
-                                                                         alt="">
-
+                                    <li class="col-xs-2 no-padding">
+                                        <a href="{{ path('client_profilconsult',{id:i.id}) }}">
+                                        <img class="img-responsive" src="{{ asset('images/team-1.jpg') }}" alt="">
+                                        </a>
                                     </li>
                                     <li class="col-xs-10 ">
-                                        <h5 class="text-uppercase no-margin">{{ i.service.categorie }}
+                                        <h5 class="text-uppercase  "style="margin: 10px">
+                                            Professionnel: {{ i.service.idUser }}
+                                        </h5>
+                                        <h5 class="text-uppercase " style="margin: 10px">{{ i.service.categorie }}
                                             : {{ i.budget }} DT
-                                        <p style="margin-left: 470px ;margin-top: -25px" href="">Disponible</p></h5>
+                                        </h5>
 
                                         <br>
 
@@ -47,7 +131,7 @@
 
 
                                         <span style="margin-left: 220px"><i
-                                                    class="fa fa-calendar "></i> {{ i.date | date("m/d/Y") }} </span>
+                                                    class="fa fa-calendar "></i> {{ i.dateAjout | date("m/d/Y") }} </span>
                                     </li>
                                 </ul>
 
@@ -61,26 +145,25 @@
 
 
                             <!--=======  RECENT POST =========-->
-                            <h5>offres récenement ajoutés </h5>
+                            <h5>Services récents </h5>
                             <div class="tw-widgets">
                                 <ul>
-
+                                    {% for i in service %}
                                         <!--=======  RECENT POST =========-->
                                         <li>
                                             <ul class="wid-in">
                                                 <li><a href="#."><img class="img-responsive"
-                                                                      src="{{ asset('images/gal-img-3.jpg') }}"
+                                                                      src="{{ asset('user/img/'~i.ImageName) }}"
                                                                       alt=""></a></li>
                                                 <li>
                                                     <div class="img-side"></div>
-                                                    <a href="#.">  </a> <br>
+                                                    <a href="#.">{{ i.categorie }}  </a> <br>
 
-                                                    <span><i
-                                                                class="fa fa-calendar"></i> </span>
+                                                    <span><i class="fa fa-calendar"></i>{{ i.date| date("m/d/Y") }} </span>
                                                 </li>
                                             </ul>
                                         </li>
-
+                                    {% endfor %}
 
                                 </ul>
                             </div>

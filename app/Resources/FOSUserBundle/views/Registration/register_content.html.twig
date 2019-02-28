@@ -1,0 +1,115 @@
+{% extends 'base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block header %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+    {{ parent() }}
+<body style="">
+<!-- Page Wrap ===========================================-->
+<div id="wrap">
+
+
+
+
+    <!--======= CONTACT =========-->
+    <section class="contact">
+        <div class="container">
+
+            <!--======= CONTACT INFORMATION =========-->
+            <div class="contact-info">
+                <div class="row">
+
+                    <!--======= CONTACT =========-->
+
+
+                    <!--======= CONTACT FORM =========-->
+
+
+                    <div class="contact-form">
+
+
+                        <div class="tittle"><h2>Formulaire d'inscription</h2>
+                            <hr>
+                            <p>Feel free to call us directly or simply complete our form below and we will follow up
+                                with you.</p>
+                        </div>
+
+
+                        <div id="contact_message" class="success-msg"><i class="fa fa-paper-plane-o"></i>Thank You.
+                            Your Message has been Submitted
+                        </div>
+
+                        {{ form_start(form,{'attr':{'id ':'contact_form'}},{action: path('fos_user_registration_register')}) }}
+                        <ul class="row">
+                            <li class="col-sm-6">
+                                <label>Nom *
+                                    {{ form_widget(form.nom ,{'attr':{'class ':'form-control'}})}}
+                                </label>
+                            </li>
+                            <li class="col-sm-6">
+                                <label>Prénom *
+                                    {{ form_widget(form.prenom ,{'attr':{'class ':'form-control'}}) }}
+                                </label>
+                            </li>
+                            <li class="col-sm-6">
+                                <label>Email *
+                                    {{ form_widget(form.email ,{'attr':{'class ':'form-control'}}) }}
+                                </label>
+                            </li>
+                            <li class="col-sm-6">
+                                <label>N°Téléphone *
+                                    {{ form_widget(form.telephone ,{'attr':{'class ':'form-control'}}) }}
+                                </label>
+                            </li>
+                            <li class="col-sm-6">
+                                <label>Nom d'utilisateur *
+                                    {{ form_widget(form.username ,{'attr':{'class ':'form-control'}}) }}
+                                </label>
+                            </li>
+                            <li class="col-sm-6">
+                                <label>Type *
+                                    {{ form_widget(form.roles ,{'attr':{'class ':'form-control'}}) }}
+                                </label>
+                            </li>
+                            <li class="col-sm-6">
+                                <label>Adresse *
+                                    {{ form_widget(form.adresse ,{'attr':{'class ':'form-control'}}) }}
+                                </label>
+                            </li>
+                            <li class="col-sm-6">
+                                <label>Mode de passe *
+                                    {{ form_widget(form.plainPassword.first ,{'attr':{'class ':'form-control'}}) }}
+                                </label>
+                            </li>
+                            <br>
+                            <li class="col-sm-6">
+                                <label>Répéter votre mot de passe *
+                                    {{ form_widget(form.plainPassword.second ,{'attr':{'class ':'form-control'}}) }}
+                                </label>
+                            </li>
+
+                            <li class="col-sm-12 " >
+                                <div class="text-center">
+                                {{ form_widget(form.submit ,{'attr':{'class ':'btn btn-default btn-sm '}}) }}
+                                </div>
+                            </li>
+                        </ul>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+</div>
+
+
+
+
+</body>
+{% endblock %}

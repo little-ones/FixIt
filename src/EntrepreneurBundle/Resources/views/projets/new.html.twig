@@ -1,0 +1,19 @@
+{% extends 'baseentrepreneur.html.twig' %}
+{% block header %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+    {{ parent() }}
+    <h1>Projet creation</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('projets_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

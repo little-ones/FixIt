@@ -1,0 +1,35 @@
+reclamation:
+    path:  /
+    defaults: { _controller: "FixitBundle:Reclamation:index" }
+
+reclamation_sort:
+    path:  /{field}/{type}/sort
+    defaults: { _controller: "FixitBundle:Reclamation:sort" }
+    requirements: { type: ASC|DESC }
+
+reclamation_show:
+    path:  /{id}/show
+    defaults: { _controller: "FixitBundle:Reclamation:show" }
+
+reclamation_new:
+    path:  /new
+    defaults: { _controller: "FixitBundle:Reclamation:new" }
+
+reclamation_create:
+    path:  /create
+    defaults: { _controller: "FixitBundle:Reclamation:create" }
+    requirements: { _method: post }
+
+reclamation_edit:
+    path:  /{id}/edit
+    defaults: { _controller: "FixitBundle:Reclamation:edit" }
+
+reclamation_update:
+    path:  /{id}/update
+    defaults: { _controller: "FixitBundle:Reclamation:update" }
+    requirements: { _method: post|put }
+
+reclamation_delete:
+    path:  /{id}/delete
+    defaults: { _controller: "FixitBundle:Reclamation:delete" }
+    requirements: { _method: post|delete }

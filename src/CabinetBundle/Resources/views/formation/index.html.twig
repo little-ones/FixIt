@@ -1,0 +1,46 @@
+{% extends 'basecabinet.html.twig' %}
+{% block header %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+    {{ parent() }}
+    <h1>Formations list</h1>
+
+    <table class="table" >
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Type</th>
+                <th>Duree</th>
+                <th>Tuteur</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for formation in formations %}
+            <tr>
+                <td><a href="{{ path('formation_show', { 'id': formation.id }) }}">{{ formation.id }}</a></td>
+                <td>{{ formation.type }}</td>
+                <td>{{ formation.duree }}</td>
+                <td>{{ formation.tuteur }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('formation_show', { 'id': formation.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('formation_edit', { 'id': formation.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <h6><a href="{{ path('formation_new') }}">Create a new formation</a></h6>
+        </li>
+    </ul>
+{% endblock %}

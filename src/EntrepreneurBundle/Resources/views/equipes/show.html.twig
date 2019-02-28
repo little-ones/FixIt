@@ -1,0 +1,47 @@
+{% extends 'baseentrepreneur.html.twig' %}
+{% block header %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+    {{ parent() }}
+    <h1>Equipe</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ equipe.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ equipe.titre }}</td>
+            </tr>
+            <tr>
+                <th>Membres</th>
+                <td>{{ equipe.membres }}</td>
+            </tr>
+            <tr>
+                <th>Etat</th>
+                <td>{{ equipe.etat }}</td>
+            </tr>
+            <tr>
+                <th>Disponibilite</th>
+                <td>{{ equipe.disponibilite }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('equipes_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('equipes_edit', { 'id': equipe.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

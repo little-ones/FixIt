@@ -1,0 +1,24 @@
+equipes_index:
+    path:     /
+    defaults: { _controller: "EntrepreneurBundle:Equipes:index" }
+    methods:  GET
+
+equipes_show:
+    path:     /{id}/show
+    defaults: { _controller: "EntrepreneurBundle:Equipes:show" }
+    methods:  GET
+
+equipes_new:
+    path:     /new
+    defaults: { _controller: "EntrepreneurBundle:Equipes:new" }
+    methods:  [GET, POST]
+
+equipes_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "EntrepreneurBundle:Equipes:edit" }
+    methods:  [GET, POST]
+
+equipes_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "EntrepreneurBundle:Equipes:delete" }
+    methods:  DELETE

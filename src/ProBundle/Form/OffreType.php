@@ -16,16 +16,20 @@ class OffreType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('budget')
+        $builder
+            ->add('budget')
             ->add('Titre')
             ->add('Description', TextareaType::class)
             ->add('service', EntityType::class, array(
                 'class' => 'ClientBundle\Entity\Service',
                 'choice_label'=>'categorie',
                 'multiple'=>false))
+            ->add('Client', EntityType::class, array(
+                'class' => 'AppBundle\Entity\User',
+                'choice_label'=>'username',
+                'multiple'=>false))
             ->add('Ajouter',SubmitType::class);
-    }
-    /**
+    }/**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)

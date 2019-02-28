@@ -23,7 +23,8 @@
                         <!--======= ADMIN INFO =========-->
                         {% for i in reservation %}
                             <div class="admin-info">
-
+                                <span style="margin-left: 500px"><i
+                                    class="fa fa-clock-o "></i> {{ i.etat }} </span>
                                 <ul class="row">
                                     <li class="col-xs-2 no-padding"><img class="img-responsive"
                                                                          src="{{ asset('images/team-1.jpg') }}"
@@ -47,7 +48,7 @@
                                         <span style="margin-left: 350px"><i
                                                     class="fa fa-calendar "></i> {{ i.datedebut | date("m/d/Y") }} </span>
                                         <i class="fa fa-arrow-right "></i>
-                                        <span ><i
+                                        <span><i
                                                     class="fa fa-calendar "></i> {{ i.datefin | date("m/d/Y") }} </span>
 
                                     </li>
