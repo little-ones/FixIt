@@ -29,8 +29,9 @@
         <thead>
             <tr>
                 <th scope="col">{{ thead('offre', 'id', 'Id') }}</th>
-                <th scope="col">{{ thead('offre', 'budget', 'Budget') }}</th>
+                <th scope="col">{{ thead('offre', 'User', 'Propriétaire') }}</th>
                 <th scope="col">{{ thead('offre', 'Titre', 'Titre') }}</th>
+                <th scope="col">{{ thead('offre', 'budget', 'Budget') }}</th>
                 <th scope="col">{{ thead('offre', 'Description', 'Description') }}</th>
                 <th scope="col">{{ 'Actions'|trans({}, 'admin') }}</th>
             </tr>
@@ -39,8 +40,9 @@
             {% for offre in paginator %}
                 <tr>
                     <td><a href="{{ path('offre_show', {id: offre.id}) }}">{{ offre.id }}</a></td>
-                    <td>{{ offre.budget }}</td>
+                    <td>{{ offre.User }}</td>
                     <td>{{ offre.Titre }}</td>
+                    <td>{{ offre.budget }}</td>
                     <td>{{ offre.Description }}</td>
                     <td>
                         <div class="btn-group">

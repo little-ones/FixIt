@@ -3,17 +3,70 @@ fixit_reclamation:
     prefix:   /reclamation
 
 fixit_homepage:
-    path:     /
-    defaults: { _controller: FixitBundle:Default:index }
+  path:     /
+  defaults: { _controller: FixitBundle:Default:index }
+
 fixit_aboutus:
-    path:     /aboutus
-    defaults: { _controller: FixitBundle:Default:aboutus }
+  path:     /aboutus
+  defaults: { _controller: FixitBundle:Default:aboutus }
+
 fixit_services:
-    path:     /services
-    defaults: { _controller: FixitBundle:Default:services }
+  path:     /services
+  defaults: { _controller: FixitBundle:Default:services }
+
 fixit_gallery:
-    path:     /gallery
-    defaults: { _controller: FixitBundle:Default:gallery }
+  path:     /gallery
+  defaults: { _controller: FixitBundle:Default:gallery }
+
 fixit_contactus:
-    path:     /contactus
-    defaults: { _controller: FixitBundle:Default:contactus }
+  path:     /contactus
+  defaults: { _controller: FixitBundle:Default:contactus }
+
+fixit_register:
+  path:     /register
+  defaults: { _controller: fos_user.registration.controller:registerAction }
+
+
+fixit_construction_project:
+  path:     /construction_project
+  defaults: { _controller: FixitBundle:Default:construction_project}
+
+fixit_construction_project_new:
+  path:     /construction_project/new
+  defaults: { _controller: FixitBundle:Projets:new}
+
+fixit_construction_project_edit:
+  path:     /construction_project/{id}/edit
+  defaults: { _controller: FixitBundle:Projets:edit_equipes}
+
+fixit_construction_project_delete:
+  path:     /construction_project/{id}/delete
+  defaults: { _controller: FixitBundle:Projets:delete}
+
+fixit_construction_project_show:
+  path:     /construction_project/{id}/show
+  defaults: { _controller: FixitBundle:Projets:show}
+
+fixit_equipes:
+  path:     /equipes
+  defaults: { _controller: FixitBundle:Equipes:index}
+
+fixit_equipes_new:
+  path:     /equipes/new
+  defaults: { _controller: FixitBundle:Equipes:new_equipes}
+
+fixit_equipes_edit:
+  path:     /equipes/{id}/edit
+  defaults: { _controller: FixitBundle:Equipes:edit_equipes}
+
+fixit_equipes_delete:
+  path:     /equipes/{id}/delete
+  defaults: { _controller: FixitBundle:Equipes:delete}
+
+fixit_equipes_show:
+    path:     /equipes/{id}/show
+    defaults: { _controller: FixitBundle:Equipes:show}
+
+fixit_stat:
+    path:     /construction/stat
+    defaults: { _controller: FixitBundle:Projets:stat }

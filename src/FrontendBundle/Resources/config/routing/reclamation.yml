@@ -1,0 +1,35 @@
+reclamation:
+    path:  /
+    defaults: { _controller: "FrontendBundle:Reclamation:index" }
+
+reclamation_sort:
+    path:  /{field}/{type}/sort
+    defaults: { _controller: "FrontendBundle:Reclamation:sort" }
+    requirements: { type: ASC|DESC }
+
+reclamation_show:
+    path:  /{id}/show
+    defaults: { _controller: "FrontendBundle:Reclamation:show" }
+
+reclamation_new:
+    path:  /new
+    defaults: { _controller: "FrontendBundle:Reclamation:new" }
+
+reclamation_create:
+    path:  /create
+    defaults: { _controller: "FrontendBundle:Reclamation:create" }
+    requirements: { _method: post }
+
+reclamation_edit:
+    path:  /{id}/edit
+    defaults: { _controller: "FrontendBundle:Reclamation:edit" }
+
+reclamation_update:
+    path:  /{id}/update
+    defaults: { _controller: "FrontendBundle:Reclamation:update" }
+    requirements: { _method: post|put }
+
+reclamation_delete:
+    path:  /{id}/delete
+    defaults: { _controller: "FrontendBundle:Reclamation:delete" }
+    requirements: { _method: post|delete }

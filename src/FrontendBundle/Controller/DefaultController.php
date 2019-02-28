@@ -4,6 +4,8 @@ namespace FrontendBundle\Controller;
 
 use AdminUserBundle\Entity\User;
 use ClientBundle\Entity\Demande;
+use FrontendBundle\Entity\Reclamation;
+use FrontendBundle\Form\ReclamationType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use ServiceBundle\Entity\Service;
 use OffreBundle\Form\OffreType;
@@ -50,7 +52,7 @@ class DefaultController extends Controller
 
     }
 
-    public function servicesAction()
+    public function OffresAction()
     {
         $user = $this->getUser();
         $user->getId();
@@ -61,15 +63,43 @@ class DefaultController extends Controller
         $services = $this->getDoctrine()->getRepository(Service::class)->findAll();
         return $this->render('@Frontend/Default/MesOffres.html.twig', array('services'=>$services ,'offres' =>$offres));
     }
+    public function servicesAction()
+    {
+        $user = $this->getUser();
+        $user->getId();
+        $em = $this->getDoctrine()->getManager();
+        $qb = $em->getRepository('ServiceBundle:Service')->createQueryBuilder('d')->where('d.User =:id')
+            ->setParameter('id',$user)->getQuery();
+        $services = $qb->getResult();
+        return $this->render('@Frontend/Default/MesServices.html.twig', array('services'=>$services ));
+    }
 
     public function aboutusAction()
     {
         return $this->render('@Frontend/Default/aboutus.html.twig');
     }
 
-    public function contactusAction()
+    public function contactusAction(Request $request)
     {
-        return $this->render('@Frontend/Default/contactus.html.twig');
+        //return $this->render('@Frontend/Default/contactus.html.twig');
+        $reclamation = new Reclamation();
+        $form = $this->createForm(ReclamationType::class, $reclamation);
+        $form = $form->handleRequest($request);
+
+        if ($form->isSubmitted()){
+            $reclamation->setDate( new \DateTime('now'));
+            $reclamation->setUser($this->getUser());
+            $reclamation->setEtat("unread");
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($reclamation);
+            $em->flush();
+
+            return $this->redirectToRoute("fixit_homepage");
+
+        }
+        return $this->render('@Frontend/Default/contactus.html.twig', array(
+            'form'   => $form->createView(),
+        ));
     }
 
     public function galleryAction()

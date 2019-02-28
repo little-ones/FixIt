@@ -46,4 +46,8 @@ class DefaultController extends Controller
             'form'   => $form->createView(),
         ));
     }
+    public function construction_projectAction()
+    {
+        return $this->render('@Fixit/construction_project/construction_project.html.twig');
+    }
 }
