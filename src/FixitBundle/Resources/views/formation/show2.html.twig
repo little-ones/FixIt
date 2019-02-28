@@ -1,0 +1,44 @@
+{% extends 'baseBackend.html.twig' %}
+{% block header %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+    {{ parent() }}
+
+    <h1>Formation</h1>
+
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ formation.id }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ formation.type }}</td>
+            </tr>
+            <tr>
+                <th>Duree</th>
+                <td>{{ formation.duree }}</td>
+            </tr>
+            <tr>
+                <th>Tuteur</th>
+                <td>{{ formation.tuteur }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('formation_index1') }}">Retour a la liste</a>
+        </li>
+        <li>
+            <a href="{{ path('formation_edit1', { 'id': formation.id }) }}">Modifier</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

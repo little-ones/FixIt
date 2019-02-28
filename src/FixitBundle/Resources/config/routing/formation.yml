@@ -1,0 +1,45 @@
+formation_index:
+    path:     /
+    defaults: { _controller: "FixitBundle:formation:index" }
+    methods:  GET
+formation_index1:
+    path:     /1
+    defaults: { _controller: "FixitBundle:formation:index1" }
+    methods:  GET
+formation_show:
+    path:     /{id}/show
+    defaults: { _controller: "FixitBundle:formation:show" }
+    methods:  GET
+formation_show2:
+    path:     /{id}/show2
+    defaults: { _controller: "FixitBundle:formation:show2" }
+    methods:  GET
+formation_show1:
+    path:     /{id}/show1
+    defaults: { _controller: "FixitBundle:formation:show1" }
+    methods:  GET
+formation_new:
+    path:     /new
+    defaults: { _controller: "FixitBundle:formation:new" }
+    methods:  [GET, POST]
+formation_new1:
+    path:     /new1
+    defaults: { _controller: "FixitBundle:formation:new1" }
+    methods:  [GET, POST]
+
+formation_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "FixitBundle:formation:edit" }
+    methods:  [GET, POST]
+formation_edit1:
+    path:     /{id}/edit1
+    defaults: { _controller: "FixitBundle:formation:edit1" }
+    methods:  [GET, POST]
+formation_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "FixitBundle:formation:delete" }
+    methods:  DELETE
+formation_delete1:
+    path:     /{id}/delete1
+    defaults: { _controller: "FixitBundle:formation:delete1" }
+    methods:  DELETE

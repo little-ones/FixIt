@@ -1,0 +1,51 @@
+participation_index:
+    path:     /
+    defaults: { _controller: "FixitBundle:Participation:index" }
+    methods:  GET
+
+participation_show:
+    path:     /{id}/show
+    defaults: { _controller: "FixitBundle:Participation:show" }
+    methods:  GET
+
+participation_new:
+    path:     /new
+    defaults: { _controller: "FixitBundle:Participation:new" }
+    methods:  [GET, POST]
+
+participation_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "FixitBundle:Participation:edit" }
+    methods:  [GET, POST]
+
+participation_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "FixitBundle:Participation:delete" }
+    methods:  DELETE
+participation_index1:
+    path:     /1
+    defaults: { _controller: "FixitBundle:Participation:index1" }
+    methods:  GET
+
+participation_show1:
+    path:     /{id}/show1
+    defaults: { _controller: "FixitBundle:Participation:show1" }
+    methods:  GET
+
+participation_new1:
+    path:     /new1
+    defaults: { _controller: "FixitBundle:Participation:new1" }
+    methods:  [GET, POST]
+
+participation_edit1:
+    path:     /{id}/edit1
+    defaults: { _controller: "FixitBundle:Participation:edit1" }
+    methods:  [GET, POST]
+
+participation_delete1:
+    path:     /{id}/delete1
+    defaults: { _controller: "FixitBundle:Participation:delete1" }
+    methods:  DELETE
+participation_participate:
+    path:     /{id}/participate
+    defaults: { _controller: "FixitBundle:Participation:Participer" }

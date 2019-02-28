@@ -1,0 +1,20 @@
+{% extends 'default/baseformation.html.twig' %}
+{% block header %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+    {{ parent() }}
+
+    <h1>Formation creation</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Create" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('formation_index') }}">Retour a la liste </a>
+        </li>
+    </ul>
+{% endblock %}

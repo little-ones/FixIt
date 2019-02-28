@@ -1,3 +1,13 @@
+fixit_evenement:
+    resource: "@FixitBundle/Resources/config/routing/evenement.yml"
+    prefix:   /evenement
+
+fixit_formation:
+  resource: "@FixitBundle/Resources/config/routing/formation.yml"
+  prefix:   /formation
+fixit_participation:
+  resource: "routing/participation.yml"
+  prefix:   /participation
 fixit_homepage:
     path:     /
     defaults: { _controller: FixitBundle:Default:index }
@@ -5,11 +15,11 @@ fixit_aboutus:
     path:     /aboutus
     defaults: { _controller: FixitBundle:Default:aboutus }
 fixit_services:
-    path:     /services
-    defaults: { _controller: FixitBundle:Default:services }
+  path:     /services
+  defaults: { _controller: FixitBundle:evenement:index1 }
 fixit_gallery:
-    path:     /gallery
-    defaults: { _controller: FixitBundle:Default:gallery }
+  path:     /gallery
+  defaults: { _controller: FixitBundle:Default:gallery }
 fixit_contactus:
-    path:     /contactus
-    defaults: { _controller: FixitBundle:Default:contactus }
+  path:     /contactus
+  defaults: { _controller: FixitBundle:Default:contactus }

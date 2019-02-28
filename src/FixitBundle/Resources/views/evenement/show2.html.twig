@@ -1,0 +1,58 @@
+{% extends 'baseBackend.html.twig' %}
+{% block header %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+    {{ parent() }}
+    <h1>Evenement</h1>
+
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+            <th>Nom</th>
+            <td>{{ evenement.getnom }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ evenement.id }}</td>
+            </tr>
+            <tr>
+                <th>Prix en dinars</th>
+                <td>{{ evenement.prix }}</td>
+            </tr>
+            <tr>
+                <th>Lieu</th>
+                <td>{{ evenement.lieu }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{% if evenement.date %}{{ evenement.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Nbreparticipant</th>
+                <td>{{ evenement.nbreParticipant }}</td>
+            </tr>
+            <tr>
+                <th>formation</th>
+                <td>{{ evenement.formation }}</td>
+            </tr>
+            <tr><td> rating</td>
+                <td>{{ evenement.rating|rating}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('evenement_index2') }}">Retour a la liste</a>
+        </li>
+        <li>
+            <a href="{{ path('evenement_edit2', { 'id': evenement.id }) }}">Modifier</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'baseBackend.html.twig' %}
+{% block header %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+    {{ parent() }}
+    <h1>Evenements list</h1>
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Prix en dinars</th>
+            <th>Lieu</th>
+            <th>Date</th>
+            <th>Nbreparticipant</th>
+            <th>formation</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for evenement in evenements %}
+            <tr>
+                <td><a href="{{ path('evenement_show2', { 'id': evenement.id }) }}">{{ evenement.id }}</a></td>
+                <td>{{ evenement.getnom }}</td>
+                <td>{{ evenement.prix }}</td>
+                <td>{{ evenement.lieu }}</td>
+                <td>{% if evenement.date %}{{ evenement.date|date('Y-m-d H:i') }}{% endif %}</td>
+                <td>{{ evenement.nbreParticipant }}</td>
+                <td>{{ evenement.formation }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('evenement_show2', { 'id': evenement.id }) }}">Montrer</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('evenement_edit2', { 'id': evenement.id }) }}">Modifier</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('evenement_new2') }}">Creer un nouveau evenement</a>
+        </li>
+    </ul>
+{% endblock %}
+

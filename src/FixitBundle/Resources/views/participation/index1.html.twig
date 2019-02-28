@@ -1,0 +1,43 @@
+{% extends 'baseBackend.html.twig' %}
+
+{% block header %}
+    {{ parent() }}
+{% endblock %}
+{% block content %}
+    {{ parent() }}
+    <h1>Participations list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for participation in participations %}
+            <tr>
+                <td><a href="{{ path('participation_show', { 'id': participation.id }) }}">{{ participation.id }}</a></td>
+                <td> {{ participation.user }}</td>
+                <td> {{ participation.evenement }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('participation_show', { 'id': participation.id }) }}">Montrer</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('participation_edit', { 'id': participation.id }) }}">Modifier</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('participation_new') }}">Creer une nouvelle participation</a>
+        </li>
+    </ul>
+{% endblock %}
