@@ -1,3 +1,7 @@
+frontend_reclamation:
+    resource: "@FrontendBundle/Resources/config/routing/reclamation.yml"
+    prefix:   /reclamation
+
 fixit_homepage:
     path:     /
     defaults: { _controller: FrontendBundle:Default:Home }
@@ -6,6 +10,9 @@ fixit_aboutus:
     defaults: { _controller: FrontendBundle:Default:aboutus }
 fixit_MesOffres:
     path:     /MesOffres
+    defaults: { _controller: FrontendBundle:Default:Offres }
+fixit_MesServices:
+    path:     /MesServices
     defaults: { _controller: FrontendBundle:Default:services }
 fixit_gallery:
     path:     /gallery

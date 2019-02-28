@@ -34,6 +34,27 @@ class Service
      *@ORM\Column(type="date" , length=255)
      */
     private $dateAjout;
+    /**
+     * @ORM\ManyToOne(targetEntity="AdminUserBundle\Entity\User")
+     * @ORM\JoinColumn (name="user_id", referencedColumnName="id")
+     */
+    private $User;
+
+    /**
+     * @return mixed
+     */
+    public function getUser()
+    {
+        return $this->User;
+    }
+
+    /**
+     * @param mixed $User
+     */
+    public function setUser($User)
+    {
+        $this->User = $User;
+    }
 
     /**
      * @return mixed
